@@ -8,9 +8,14 @@
     padding:16px;
 }
 
-.title
+.title,.pagetitle
 {
     padding:16px;
+}
+
+.pagetitle
+{
+    text-align: left;
 }
 
 
