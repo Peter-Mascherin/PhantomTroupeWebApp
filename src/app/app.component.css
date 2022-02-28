@@ -1,0 +1,55 @@
+.headerdiv
+{
+    text-align: center;
+    background-color: rgb(24, 23, 23);
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgb(63, 62, 62);
+    padding:16px;
+}
+
+.title
+{
+    padding:16px;
+}
+
+
+
+.contentdiv
+{
+    background-color: rgba(150, 148, 148,0.6);
+    font-family: 'Roboto', sans-serif;
+    padding:20px 30px;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    margin:8px;
+    
+    
+}
+
+
+
+body{
+    position: relative;
+    background-image: url("../assets/images/forestbackground.jpg");
+    
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+.footerdiv
+{
+    text-align: center;
+    background-color: rgb(24, 23, 23);
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgb(63, 62, 62);
+    padding:16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
