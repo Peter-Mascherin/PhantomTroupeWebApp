@@ -27,7 +27,8 @@
     padding:20px 30px;
     color: white;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
-    margin:8px;
+    margin:20px;
+    border-radius: 12px;
     
     
 }
@@ -37,7 +38,10 @@
 body{
     position: relative;
     background-image: url("../assets/images/forestbackground.jpg");
-    
+    /*this stuff below me excluding padding and minheight is only temporary for background image*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     padding-bottom: 50px;
     min-height: 100vh;
 }

@@ -2,6 +2,7 @@
       
     color: white;
     font-family: 'League Gothic';
+    
     font-size: 24px;
     padding: 40px;
   }
@@ -13,12 +14,15 @@
   .menu-view{
     font-size: 20px;
     font-family: 'League Gothic';
+    
     color: white;
   }
   .pagetitle{
     flex: 5;
     font-size: 34px;
     font-family: 'League Gothic';
+    
+    color: white;
   
   }a{
     text-decoration: none;
@@ -30,7 +34,7 @@
   }
 
   a:hover{
-    color: green;
+    color: rgb(248, 232, 88);
   }
   .side-bar {
       position: fixed;
