@@ -1,0 +1,62 @@
+.spacer {
+      
+    color: white;
+    font-family: 'League Gothic';
+    font-size: 24px;
+    padding: 40px;
+  }
+  .spacerDiv{
+    justify-content: space-between;
+    flex: 3;;
+    
+  }
+  .menu-view{
+    font-size: 20px;
+    font-family: 'League Gothic';
+    color: white;
+  }
+  .pagetitle{
+    flex: 5;
+    font-size: 34px;
+    font-family: 'League Gothic';
+  
+  }a{
+    text-decoration: none;
+  }
+  .mat-toolbar{
+    position: fixed;
+    background-color: black;
+    height: 80px;
+  }
+
+  a:hover{
+    color: green;
+  }
+  .side-bar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+      background: transparent;
+  }
+  
+  .side-content {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100vh;
+      padding: 50px;
+      background-color: black;
+      color: #555555 ;
+  }
+  .backdrop {
+      position: fixed;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    
+  }

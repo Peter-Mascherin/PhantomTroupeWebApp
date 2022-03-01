@@ -1,0 +1,43 @@
+<div>
+ 
+    <mat-toolbar>
+    
+     <!--hides menu when greater than ~900px, triggers when smaller-->
+     <div fxShow="true" fxHide.gt-sm="true">
+       <button mat-icon-button (click)="sidenav.toggle()">
+         <mat-icon>menu</mat-icon>
+       </button>
+     </div>
+
+     <span class="pagetitle"> WOODSTOVE LEATHER GOODS</span>
+       <div class="spacerDiv" fxShow="true" fxHide.lt-md="true">
+
+       
+            <a href="#" class="spacer" > HOME</a>
+           <a href="#"  class="spacer" > GALLERY</a>
+           <a href="#"  class="spacer"  > CUSTOM ORDER</a>
+           <a href="#"  class="spacer"  > PAY</a>
+           <a href="#"  class="spacer"  > ABOUT</a>
+     
+          
+       </div>   
+    </mat-toolbar>
+
+
+
+
+    <mat-drawer-container>
+     <mat-sidenav #sidenav fxLayout="column" class="side-bar" >
+       <div class="backdrop" (click)="sidenav.close()"></div>
+         <div fxLayout="column" class="side-content"> 
+           <a href="#" class="menu-view" mat-button> HOME</a><br>
+           <a href="#" class="menu-view" mat-button> GALLERY</a><br>
+           <a href="#" class="menu-view"  mat-button> CUSTOM ORDER</a><br>
+           <a href="#" class="menu-view"  mat-button> PAY</a><br>
+           <a href="#"  class="menu-view" mat-button> ABOUT</a><br>
+         </div>
+     </mat-sidenav>
+ </mat-drawer-container>
+ 
+
+ </div>
