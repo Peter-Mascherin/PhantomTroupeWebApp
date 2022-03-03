@@ -11,6 +11,8 @@
     flex: 3;;
     
   }
+
+  
   .menu-view{
     font-size: 20px;
     font-family: 'League Gothic';
@@ -31,6 +33,7 @@
     position: fixed;
     background-color: black;
     height: 80px;
+    z-index: 100;
   }
 
   a:hover{
