@@ -59,6 +59,25 @@ body{
     width: 100%;
 }
 
+.pic{
+    height: 450px;
+    margin: auto;
+    width: 100%;
+    opacity: 100%;
+}
+
+.highlights{
+    background-color: rgba(0, 0, 0, 0.95);
+    max-width: auto;
+    margin: auto;
+    padding:2px 3px;
+    margin:20px;
+    border-radius: 12px;
+}
+
+div{
+    margin: auto;
+  }
 
 
 

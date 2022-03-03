@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentModule } from './component/component.module';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { ComponentModule } from './component/component.module';
     MatMenuModule,
     MatIconModule,
     FlexLayoutModule,
-    ComponentModule
+    ComponentModule,
+    NgbModule
     
   ],
   providers: [],
