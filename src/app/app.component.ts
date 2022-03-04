@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'woodstove'; 
+
+
+  testfunc()
+  {
+    console.log("Yea the gallery button works");
+  }
 }

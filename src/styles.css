@@ -13,13 +13,16 @@
 
 ngb-carousel {
     max-width: auto;
-    margin: 50px auto;
-    width: 100%;
+    
+    width: 85%;
+    padding:16px;
+    
     height: inherit;
 }
 
 .carousel-inner {
     overflow: hidden;
+    
 }
 
 .carousel-item {
@@ -47,6 +50,7 @@ ngb-carousel {
 .carousel-control-next-icon, .carousel-control-prev-icon {
     width: 75px;
     height: 85px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(192deg) brightness(104%) contrast(102%);
 }
 
 

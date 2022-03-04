@@ -22,14 +22,14 @@
 
 .contentdiv
 {
-    background-color: rgba(150, 148, 148,0.6);
+    background-color: rgba(223, 211, 211, 0.473);
     font-family: 'Roboto', sans-serif;
     padding:20px 30px;
     color: white;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
-    margin:20px;
-    border-radius: 12px;
     
+    border-radius: 12px;
+    grid-area: 2 / 1 / span 1 / span 2;
     
 }
 
@@ -46,6 +46,18 @@ body{
     min-height: 100vh;
 }
 
+.mainpagediv
+{
+    display:grid;
+    grid-template-columns: 65% 30%;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    margin:0;
+    padding:0;
+    justify-content: space-around;
+    width:100%;
+}
+
 .footerdiv
 {
     text-align: center;
@@ -53,30 +65,106 @@ body{
     color:white;
     font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 2px rgb(63, 62, 62);
-    padding:16px;
+    padding:4px;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
+.socialdiv
+{
+    /*background-color: rgba(223, 211, 211, 0.473);*/
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 100%;
+    height:100%;
+    border-radius: 12px;
+    grid-area: 1 / 2 span 1 / span 1;
+
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    padding: 24px;
+    
+}
 .pic{
     height: 450px;
     margin: auto;
     width: 100%;
     opacity: 100%;
+    border-radius: 10px;
 }
 
 .highlights{
-    background-color: rgba(0, 0, 0, 0.95);
-    max-width: auto;
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 100%;
     margin: auto;
     padding:2px 3px;
-    margin:20px;
     border-radius: 12px;
+    display:flex;
+    justify-content: center;
+    grid-area: 1 / 1 / span 1 / span 1;
+    
 }
 
+.highlightstitle
+{
+    color:white;
+}
 div{
     margin: auto;
+  }
+
+
+
+/*ICON CSS BELOW*/
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    width:70px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-instagram
+  {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    color:white;
+  }
+
+  h4
+  {
+      display: inline-block;
+      padding:20px;
+      font-size: large;
+      font-family: 'Roboto', sans-serif;
+      
+  }
+
+  .fa-etsy
+  {
+      background:rgb(228, 152, 10);
+      color:white;
   }
 
 
