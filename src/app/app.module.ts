@@ -13,11 +13,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentModule } from './component/component.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutPageComponent } from './Menu/about-page/about-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
+    AboutPageComponent, 
   ],
   imports: [
     BrowserModule,
