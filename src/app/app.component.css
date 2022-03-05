@@ -22,12 +22,13 @@
 
 .contentdiv
 {
-    background-color: rgba(223, 211, 211, 0.473);
+    background-color: rgba(10, 10, 10, 0.95);
+    /*background-color: rgba(223, 211, 211, 0.473);*/
     font-family: 'Roboto', sans-serif;
     padding:20px 30px;
-    color: white;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
     
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
+    color:white;
     border-radius: 12px;
     grid-area: 2 / 1 / span 1 / span 2;
     
@@ -82,7 +83,7 @@ body{
 
     color:white;
     font-family: 'Roboto', sans-serif;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
     padding: 24px;
     
 }
