@@ -16,3 +16,59 @@ h1
     font-size: 50px;
     line-height: 1.5;
 }
+
+.gallerycontent
+{
+    background-color: rgba(95, 94, 94,0.7);
+    width:99%;
+    border-radius: 12px;
+    padding:12px;
+    margin: 10px;
+
+    display:flex;
+    flex-wrap: wrap;
+    overflow-y:scroll;
+    max-height: 900px;
+}
+
+
+.imagediv
+{
+    color:white;
+    width:350px;
+    padding:12px;
+    padding-bottom: 20px;
+    margin-left:8px;
+    margin-right:8px;
+    margin-top:12px;
+    margin-bottom:12px;
+    background-color: rgba(34, 33, 33, 0.7);
+    border-radius: 12px;
+    display:grid;
+    grid-template-columns: auto;
+    grid-template-rows: 90% 10%;
+
+    box-shadow: 2px 2px 2px  rgb(43, 41, 41);
+    transition: box-shadow 100ms ease-in-out;
+}
+
+.imagediv:hover
+{
+    box-shadow: 6px 6px 6px  rgb(43, 41, 41);
+}
+.imginfo
+{
+    grid-area: 2 / 1 / span 1 / span 1;
+    justify-self: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
+}
+
+.imgclass
+{
+    grid-area: 1 / 1 / span 1 / span 1;
+    border-radius: 12px;
+    word-wrap: normal;
+    justify-self: center;
+}

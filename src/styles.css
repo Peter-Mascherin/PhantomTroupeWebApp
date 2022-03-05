@@ -6,9 +6,23 @@
     box-sizing: border-box;
 }
 
+:root
+{
+    --trackcolour: #0a0a0af2;
+    --thumbcolour: #362F2F;
+}
+
+
 *::-webkit-scrollbar
 {
-    display: none;
+    background-color:var(--trackcolour);
+}
+
+*::-webkit-scrollbar-thumb
+{
+    background-color: var(--thumbcolour);
+    border-radius: 12px;
+    
 }
 
 ngb-carousel {

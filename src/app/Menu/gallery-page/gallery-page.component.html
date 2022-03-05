@@ -6,8 +6,15 @@
         </h4>
     </div>
     <br/>
-    <div class="gallerycontent">
-
+    <div class="gallerycontent" >
+        <div class="imagediv" *ngFor="let item of gallerydata; let i = index" (click)="alertme(i)">
+            <img class="imgclass" src="{{item.imgurl}}" width="300px" height="300px">
+            <h4 class="imginfo">{{item.imgtitle}}</h4>
+        </div>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
 
 </div>
