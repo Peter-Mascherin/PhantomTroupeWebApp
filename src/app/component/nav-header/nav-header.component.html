@@ -13,11 +13,14 @@
        <div class="spacerDiv" fxShow="true" fxHide.lt-md="true">
 
        
-          <a href="#" class="spacer" > HOME</a>
-           <a href="#"  class="spacer" > GALLERY</a>
+          <a href="/home" class="spacer" > HOME</a>
+           <a href="/gallery"  class="spacer" > GALLERY</a>
            <a href="#"  class="spacer"  > CUSTOM ORDER</a>
            <a href="#"  class="spacer"  > PAY</a>
-           <a href="#"  class="spacer"  > ABOUT</a>
+           <a href="/about-page" class="spacer" >ABOUT</a>
+
+
+           
      
           
        </div>   
@@ -30,14 +33,16 @@
      <mat-sidenav #sidenav fxLayout="column" class="side-bar" >
        <div class="backdrop" (click)="sidenav.close()"></div>
          <div fxLayout="column" class="side-content"> 
-           <a href="#" class="menu-view" mat-button> HOME</a><br>
-           <a href="#" class="menu-view" mat-button> GALLERY</a><br>
+           <a href="/home" class="menu-view" mat-button> HOME</a><br>
+           <a href="/gallery" class="menu-view" mat-button> GALLERY</a><br>
            <a href="#" class="menu-view"  mat-button> CUSTOM ORDER</a><br>
            <a href="#" class="menu-view"  mat-button> PAY</a><br>
-           <a href="#"  class="menu-view" mat-button> ABOUT</a><br>
+           <a href="/about-page" class="menu-view" mat-button> ABOUT</a><br>
+
          </div>
      </mat-sidenav>
  </mat-drawer-container>
  
+
 
  </div>

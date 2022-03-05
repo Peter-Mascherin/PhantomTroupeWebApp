@@ -9,10 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {MatTabsModule} from '@angular/material/tabs';
+import { HomeComponent } from './home/home.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    NavHeaderComponent, NavHeaderComponent
+    NavHeaderComponent, NavHeaderComponent, HomeComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +27,12 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatMenuModule,
     MatIconModule,
     FlexLayoutModule,
-    MatTabsModule
+    MatTabsModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    
   ],
   exports:[NavHeaderComponent]
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav-header',
   templateUrl: './nav-header.component.html',
@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   opened = false;
 
   ngOnInit(): void {
   }
+
+ /* openAbout(): void {
+   // window.open('/about-page');
+    this.router.navigate(['/about-page']);
+  }*/
 
 }

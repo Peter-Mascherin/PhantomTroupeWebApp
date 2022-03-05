@@ -14,12 +14,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentModule } from './component/component.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutPageComponent } from './Menu/about-page/about-page.component';
+import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutPageComponent, 
+    AboutPageComponent,
+    GalleryPageComponent 
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,6 @@ import { AboutPageComponent } from './Menu/about-page/about-page.component';
     FlexLayoutModule,
     ComponentModule,
     NgbModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
