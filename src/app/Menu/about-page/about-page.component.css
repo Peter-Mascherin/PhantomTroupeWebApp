@@ -8,7 +8,7 @@
     padding:16px;
 }
 
-.title,.pagetitle
+.title,.pagetitle,.parainfo
 {
     padding:16px;
 }
@@ -17,6 +17,8 @@
 {
     text-align: left;
 }
+
+
 
 
 

@@ -1,0 +1,18 @@
+.galleryheader
+{
+    background-color: rgba(10, 10, 10, 0.95);
+    padding:24px;
+    margin:12px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
+    text-align:center;
+    border-radius: 12px;
+    
+}
+
+h1
+{
+    font-size: 50px;
+    line-height: 1.5;
+}
