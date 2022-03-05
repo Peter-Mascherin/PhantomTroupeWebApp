@@ -15,6 +15,8 @@ import { ComponentModule } from './component/component.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutPageComponent } from './Menu/about-page/about-page.component';
 import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
+import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-page.component';
+import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 
 
 
@@ -22,7 +24,9 @@ import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component
   declarations: [
     AppComponent,
     AboutPageComponent,
-    GalleryPageComponent 
+    GalleryPageComponent,
+    CustomOrderPageComponent,
+    PayPageComponent 
   ],
   imports: [
     BrowserModule,

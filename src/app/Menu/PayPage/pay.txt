@@ -1,4 +1,0 @@
-include search by order page, -- finds order number from database
-- it will proceed to next page if approved 
-- from there, we collect payment details
- - integrate paypal so as to pay once info filled

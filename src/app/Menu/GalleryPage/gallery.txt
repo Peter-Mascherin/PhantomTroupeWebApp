@@ -1,1 +1,0 @@
-Display all images of products and also details about it when clicked, also filter

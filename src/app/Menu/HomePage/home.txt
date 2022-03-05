@@ -1,4 +1,0 @@
-displays home page with popular images at the front, 
-business contact info
-facebook integration - to be done last
-
