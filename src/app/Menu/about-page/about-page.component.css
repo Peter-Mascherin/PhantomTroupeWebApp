@@ -8,14 +8,17 @@
     padding:16px;
 }
 
-.title,.pagetitle,.parainfo
+.title,.parainfo
 {
-    padding:16px;
+    padding:12px;
+    margin-left:24px;
 }
 
 .pagetitle
 {
     text-align: left;
+    padding:12px;
+    margin-left:12px;
 }
 
 
@@ -27,8 +30,8 @@
     background-color: rgba(10, 10, 10, 0.95);
     /*background-color: rgba(223, 211, 211, 0.473);*/
     font-family: 'Roboto', sans-serif;
-    padding:20px 30px;
-    
+    padding:20px ;
+    margin:12px;
     text-shadow: 2px 2px 2px rgb(122, 122, 122);
     color:white;
     border-radius: 12px;
@@ -141,6 +144,11 @@ div{
   .fa-facebook {
     background: #3B5998;
     color: white;
+  }
+
+  .fa-facebook,.fa-etsy,.fa-instagram,h4
+  {
+      margin-left: 12px;
   }
   
   /* Twitter */
