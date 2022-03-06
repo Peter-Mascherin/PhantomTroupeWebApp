@@ -14,10 +14,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ReviewComponent } from './review/review.component';
+import {ToastModule} from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import {CardModule} from 'primeng/card';
+import {CarouselModule} from 'primeng/carousel';
 @NgModule({
   declarations: [
-    NavHeaderComponent, NavHeaderComponent, HomeComponent
+    NavHeaderComponent, NavHeaderComponent, HomeComponent, ReviewComponent
   ],
   imports: [
     CommonModule,
@@ -32,8 +36,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    ButtonModule,
+    CardModule,
+    ToastModule,
+    CarouselModule
     
   ],
-  exports:[NavHeaderComponent]
+  exports:[NavHeaderComponent, ReviewComponent]
 })
 export class ComponentModule { }

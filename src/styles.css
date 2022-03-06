@@ -67,6 +67,12 @@ ngb-carousel {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7496%) hue-rotate(192deg) brightness(104%) contrast(102%);
 }
 
+.p-carousel-prev-icon {
+    color:white;
+}
+.p-carousel-next-icon{
+    color:white
+}
 
 /*html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,25 @@
+<div class="bottomStuff">
+
+
+    <p-carousel [value]="reviews"   [numVisible]="3" [numScroll]="1"
+    [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+    <ng-template pTemplate="header">
+        <br>
+        <h5 class="title">What other clients say about us</h5>
+    </ng-template >
+        <ng-template  let-x pTemplate="item">
+            <div class="reviewCard">
+                <div class="reviewContent">
+                    <div class="p-mb-3"></div>
+                     <h4 class="mb-1">{{x.name}}</h4>
+                     <h3 class="mt-3 mb-3">{{x.review}}</h3>
+                </div>
+               
+            </div>
+        
+        </ng-template> 
+    </p-carousel>
+   
+    
+</div>
+
