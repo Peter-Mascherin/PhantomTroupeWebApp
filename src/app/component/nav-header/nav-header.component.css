@@ -67,3 +67,11 @@
       width: 100%;
     
   }
+
+  .mat-drawer-container{
+  
+    z-index: 999;
+  }
+  .toggler{
+    color:white;
+  }

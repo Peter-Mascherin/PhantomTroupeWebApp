@@ -5,7 +5,7 @@
      <!--hides menu when greater than ~900px, triggers when smaller-->
      <div fxShow="true" fxHide.gt-sm="true">
        <button mat-icon-button (click)="sidenav.toggle()">
-         <mat-icon>menu</mat-icon>
+         <mat-icon class="toggler">menu</mat-icon>
        </button>
      </div>
 
@@ -33,6 +33,7 @@
      <mat-sidenav #sidenav fxLayout="column" class="side-bar" >
        <div class="backdrop" (click)="sidenav.close()"></div>
          <div fxLayout="column" class="side-content"> 
+           <br><br>
            <a href="/home" class="menu-view" mat-button> HOME</a><br>
            <a href="/gallery" class="menu-view" mat-button> GALLERY</a><br>
            <a href="/custom-page" class="menu-view"  mat-button> CUSTOM ORDER</a><br>
