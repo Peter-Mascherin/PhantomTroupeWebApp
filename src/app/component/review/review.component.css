@@ -35,6 +35,11 @@
     font-size: 22px;
     font-weight: bold;
    }
+
+   .mb-1
+   {
+      letter-spacing: 0.04em;
+   }
    .bottomStuff{
     width: 100%;
     height: 350px;
