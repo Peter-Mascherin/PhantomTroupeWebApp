@@ -28,10 +28,11 @@
     font-weight: bold;
    }
    .bottomStuff{
-    width: 100%;
+    width: 96%;
    height: 300px;
    margin: auto;
    background-color: rgba(95, 94, 94,0.7);
+   border-radius: 15px;
    }
    /** if want black background
    **/

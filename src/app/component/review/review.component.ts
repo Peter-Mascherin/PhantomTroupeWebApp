@@ -19,7 +19,10 @@ export class ReviewComponent implements OnInit {
 
   ];
   }
-
+/**
+ * reviews are  just deefault placeholders
+ * will have to add real ones 
+ */
 
   ngOnInit(): void {
     this.reviews = [
