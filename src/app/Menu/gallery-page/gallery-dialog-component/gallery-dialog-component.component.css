@@ -1,0 +1,32 @@
+.galdialogcontent
+{
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
+}
+
+.galldialogtitle
+{
+    color:white;
+    text-shadow: 2px 2px 2px rgb(122, 122, 122);
+}
+
+img
+{
+    border-radius: 12px;
+    margin:12px;
+    margin-bottom: 20px;
+}
+
+.closebtndiv
+{
+    width:100%;
+    justify-content: center;
+}
+
+.subsubtitle
+{
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 2px rgb(95, 95, 95);
+}
+

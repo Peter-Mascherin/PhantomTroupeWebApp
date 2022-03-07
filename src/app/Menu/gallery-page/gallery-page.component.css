@@ -55,6 +55,8 @@ h1
     transition: box-shadow 100ms ease-in-out;
 }
 
+
+
 .imagediv:hover
 {
     box-shadow: 6px 6px 6px  rgb(43, 41, 41);

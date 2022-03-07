@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryPics } from './GalleryInterface';
+import {MatDialog} from '@angular/material/dialog';
 import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json';
+import { GalleryDialogComponentComponent } from './gallery-dialog-component/gallery-dialog-component.component';
 
 
 @Component({
@@ -10,10 +12,10 @@ import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json';
 })
 export class GalleryPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   gallerydata: GalleryPics[] = JSONGallery;
-
+  personaldata: any;
   ngOnInit(): void {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
@@ -21,7 +23,14 @@ export class GalleryPageComponent implements OnInit {
 
   alertme(id: number)
   {
-    alert(`You chose ${this.gallerydata[id].imgtitle}`);
+
+    var galitem = this.gallerydata[id];
+
+    const dialogref = this.dialog.open(GalleryDialogComponentComponent,{
+      width:'400px',
+      data: galitem,
+      panelClass: 'dialog-container-custom'
+    });
   }
 
   

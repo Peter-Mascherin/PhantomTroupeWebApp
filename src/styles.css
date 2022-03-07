@@ -16,13 +16,28 @@
 *::-webkit-scrollbar
 {
     background-color:var(--trackcolour);
+    border-radius: 12px;
 }
 
 *::-webkit-scrollbar-thumb
 {
     background-color: var(--thumbcolour);
     border-radius: 12px;
-    
+}
+
+*::-webkit-scrollbar-track
+{
+    background-color:var(--trackcolour);
+}
+
+
+
+/*Trying to customize dialog box here*/
+.dialog-container-custom .mat-dialog-container {
+	padding: 24px;
+	background-color: rgba(34, 33, 33, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
 }
 
 ngb-carousel {

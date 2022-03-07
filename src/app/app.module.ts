@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentModule } from './component/component.module';
@@ -17,6 +18,7 @@ import { AboutPageComponent } from './Menu/about-page/about-page.component';
 import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
 import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-page.component';
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
+import { GalleryDialogComponentComponent } from './Menu/gallery-page/gallery-dialog-component/gallery-dialog-component.component';
 
 
 
@@ -26,7 +28,8 @@ import { PayPageComponent } from './Menu/pay-page/pay-page.component';
     AboutPageComponent,
     GalleryPageComponent,
     CustomOrderPageComponent,
-    PayPageComponent 
+    PayPageComponent,
+    GalleryDialogComponentComponent 
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { PayPageComponent } from './Menu/pay-page/pay-page.component';
     MatIconModule,
     FlexLayoutModule,
     ComponentModule,
+    MatDialogModule,
     NgbModule
   ],
   providers: [],
