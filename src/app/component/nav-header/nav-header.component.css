@@ -31,7 +31,7 @@
   }
   .mat-toolbar{
     position: fixed;
-    background-color: black;
+    background-color: rgb(24, 23, 23);
     height: 80px;
     z-index: 100;
   }

@@ -78,7 +78,9 @@ body{
 .socialdiv
 {
     /*background-color: rgba(223, 211, 211, 0.473);*/
-    background-color: rgba(10, 10, 10, 0.95);
+    /*background-color: rgba(10, 10, 10, 0.95);*/
+    background-color: rgba(24, 23, 23,0.95);
+    backdrop-filter: blur(3px);
     width: 100%;
     height:100%;
     border-radius: 12px;
@@ -99,7 +101,9 @@ body{
 }
 
 .highlights{
-    background-color: rgba(10, 10, 10, 0.95);
+    /*background-color: rgba(10, 10, 10, 0.95);*/
+    background-color: rgba(24, 23, 23,0.95);
+    backdrop-filter: blur(3px);
     width: 100%;
     margin: auto;
     padding:2px 3px;
