@@ -26,11 +26,11 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.reviews = [
-      {name: 'Alex', review: "\"Exception quality, recommend this company\""},
-      {name: 'Moe', review: " \"Stunned by the quality, love it !!!!\" "},
-      {name: 'Joe', review: " \"Material is good and love it\" "},
-      {name: 'Andy', review: " \"Best business I've done\" "},
-      {name: 'Rob', review: " \"Received it quickly, not disappointed 5/5\" "},
+      {name: 'Ryan', review: "\"I absolutely love thisss!!!!\""},
+      {name: 'Cathy', review: " \"loved it!, Thank you so much !!!!\" "},
+      {name: 'Alison', review: " \"It is so beautiful and well done\" "},
+      {name: 'Coleen', review: " \"Beautiful work!\" "},
+      {name: 'Jeanne', review: " \"Recommend to anyone looking for custom work!😉\" "},
      
   ];
 
