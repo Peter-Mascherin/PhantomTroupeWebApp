@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { GalleryPics } from './GalleryInterface';
 import {MatDialog} from '@angular/material/dialog';
 import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json';
@@ -21,7 +21,10 @@ export class GalleryPageComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
-    this.url = window.location.hostname;
+    this.url = window.location.origin; //will grab the url 
+    console.log('url='+this.url)
+
+
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
     
   }
