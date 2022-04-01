@@ -13,12 +13,17 @@ import { GalleryDialogComponentComponent } from './gallery-dialog-component/gall
 export class GalleryPageComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
+  url: string = "";
+  picurl: string ="";
 
   gallerydata: GalleryPics[] = JSONGallery;
   personaldata: any;
   ngOnInit(): void {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
+    this.url = window.location.hostname;
+    this.picurl = "/images/galleryimages/woodstovegall2.jpg"
+    
   }
 
   alertme(id: number)
