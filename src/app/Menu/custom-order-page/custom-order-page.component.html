@@ -1,1 +1,38 @@
-<h1 style="background-color:powderblue;">custom-order-page works!</h1>
+<div>
+  <div class="CustomOrderHeader">
+    <h1>Custom Order</h1>
+    <h4>
+      Thank you for ordering from us
+    </h4>
+  </div>
+  <br>
+  <div class="CustomOrderForm">
+    <form>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput type="text">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Select Style</mat-label>
+        <mat-select>
+          <mat-option value="one">Handbag</mat-option>
+          <mat-option value="two">Guitar Strap</mat-option>
+          <mat-option value="two">Belt</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Order Details</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button type="submit" >Submit Order</button>
+    </form>
+  </div>
+</div>
