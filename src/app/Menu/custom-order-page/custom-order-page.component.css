@@ -16,46 +16,84 @@ h1 {
 }
 
 .CustomOrderForm {
-  background-color: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(3px);
+  background-color: rgba(24, 23, 23,0.95);
+  backdrop-filter: blur(4px);
   border-radius: 12px;
-  padding: 12px;
+  padding: 24px;
   margin: auto;
+  margin-bottom: 5%;
+  
   text-align: center;
   width: 50%;
 
 }
 
-
+.formtitle
+{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: xx-large;
+  text-align:left;
+  padding:12px;
+  margin-left:14%;
+  text-shadow: 2px 2px 2px rgb(122, 122, 122);
+}
 
 mat-label {
-  color: black;
+  color: white;
   
 }
 
 input.matInput {
-  color: black;
+  color: white;
 }
 
 input,
 label,
 select {
-  color: black;
+  color: white;
 }
 
+.emojip
+{
+  font-weight: normal !important;
+}
 textarea {
-  color: black;
+  color: white;
+  resize:vertical;
+  max-height: 175px;
+  min-height: 65px;
 }
 
-mat-select.mat-option {
-  color: black;
-} 
+::ng-deep .mat-select-value
+{    
+  color: white !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: rgb(194, 194, 194);
+}
+
+::ng-deep .mat-select-panel
+{
+  background-color: rgba(24, 23, 23, 0.555);
+  backdrop-filter: blur(12px);
+  color:white;
+}
+
+::ng-deep .mat-option-text
+{
+  color:white;
+}
 
 mat-form-field {
+  border-color: white;;
   width: 70%;
   font-size: 26px;
 }
 
 button{
   font-size: 22px;
+  background-color: rgb(212, 209, 209);
+  margin-bottom: 10px;
 }

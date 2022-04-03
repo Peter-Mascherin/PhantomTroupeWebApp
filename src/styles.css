@@ -9,7 +9,7 @@
 :root
 {
     --trackcolour: #0a0a0af2;
-    --thumbcolour: #362F2F;
+    --thumbcolour: #252525;
 }
 
 
@@ -39,6 +39,10 @@
     backdrop-filter: blur(8px);
     border-radius: 12px;
 }
+
+.mat-form-field-underline {
+    background-color: #949494 !important;
+  }
 
 ngb-carousel {
     max-width: auto;

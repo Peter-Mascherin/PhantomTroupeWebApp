@@ -1,12 +1,21 @@
+<head>
+  <meta charset="UTF-8">
+</head>
 <div>
   <div class="CustomOrderHeader">
-    <h1>Custom Order</h1>
+    <h1>Custom Order Form</h1>
     <h4>
-      Thank you for ordering from us
+      Welcome to the custom order form page! In this page you simply fill out all the information so we can set you up with an order and begin the conversation with us
+      to create your item. Once you fill out this form , an email will be sent to us and to you (assuming the email is correct) and we will begin the conversation with you. Once we come
+      to an agreement on the item and the quoted price, the order will be approved and you will be sent a payment code. You can then enter this code into the Pay page which
+      will bring up your order info and the option to pay.
     </h4>
+    <h2>Thank you so much for choosing us to make this for you , we hope you enjoy it to the fullest 😊</h2>
+    
   </div>
   <br>
   <div class="CustomOrderForm">
+    <h2 class="formtitle">Please enter all necessary information</h2>
     <form>
       <mat-form-field>
         <mat-label>Name</mat-label>
@@ -21,9 +30,8 @@
       <mat-form-field>
         <mat-label>Select Style</mat-label>
         <mat-select>
-          <mat-option value="one">Handbag</mat-option>
-          <mat-option value="two">Guitar Strap</mat-option>
-          <mat-option value="two">Belt</mat-option>
+          <mat-option *ngFor="let cat of categoryList; let i = index" value="{{cat}}">{{cat}}</mat-option>
+          
         </mat-select>
       </mat-form-field>
       <br>

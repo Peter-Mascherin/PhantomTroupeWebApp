@@ -12,4 +12,7 @@ export class CustomOrderPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //to be added to and grabbed from service
+  categoryList = ["Wallets","Leather Jewellery","Pet Collars & Leashes","Item Covers","Leather Gloves","Holsters","Guitar Straps","Belts","Bags","Miscellaneous"]
+
 }
