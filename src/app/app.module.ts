@@ -10,6 +10,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentModule } from './component/component.module';
@@ -40,6 +43,9 @@ import { GalleryDialogComponentComponent } from './Menu/gallery-page/gallery-dia
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
     FlexLayoutModule,
     ComponentModule,
     MatDialogModule,

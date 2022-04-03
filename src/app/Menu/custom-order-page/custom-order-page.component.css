@@ -1,0 +1,61 @@
+.CustomOrderHeader {
+  background-color: rgba(24, 23, 23, 0.95);
+  backdrop-filter: blur(3px);
+  padding: 24px;
+  margin: 12px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 2px rgb(122, 122, 122);
+  text-align: center;
+  border-radius: 12px;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.5;
+}
+
+.CustomOrderForm {
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(3px);
+  border-radius: 12px;
+  padding: 12px;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+
+}
+
+
+
+mat-label {
+  color: black;
+  
+}
+
+input.matInput {
+  color: black;
+}
+
+input,
+label,
+select {
+  color: black;
+}
+
+textarea {
+  color: black;
+}
+
+mat-select.mat-option {
+  color: black;
+} 
+
+mat-form-field {
+  width: 70%;
+  font-size: 26px;
+}
+
+button{
+  font-size: 22px;
+}
