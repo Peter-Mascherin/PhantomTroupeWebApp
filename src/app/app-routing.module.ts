@@ -6,6 +6,7 @@ import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-
 import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 
+// Defined the router paths
 const routes: Routes = [
   {
     path: 'about-page',
