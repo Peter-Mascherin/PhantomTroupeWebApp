@@ -22,6 +22,8 @@ import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component
 import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-page.component';
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import { GalleryDialogComponentComponent } from './Menu/gallery-page/gallery-dialog-component/gallery-dialog-component.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,7 +51,10 @@ import { GalleryDialogComponentComponent } from './Menu/gallery-page/gallery-dia
     FlexLayoutModule,
     ComponentModule,
     MatDialogModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
