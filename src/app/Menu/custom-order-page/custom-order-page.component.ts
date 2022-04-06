@@ -83,7 +83,7 @@ export class CustomOrderPageComponent implements OnInit {
       ) {
         swalWithBootstrapButtons.fire(
           'Order Cancelled',
-          'Your order was not placed:)',
+          'Your order was not placed:(',
           'error'
         )
       }
