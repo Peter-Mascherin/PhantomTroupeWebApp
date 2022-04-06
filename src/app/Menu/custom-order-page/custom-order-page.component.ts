@@ -73,8 +73,8 @@ export class CustomOrderPageComponent implements OnInit {
         console.log(this.custData)
 
         swalWithBootstrapButtons.fire(
-          'Order Sumbited ',
-          'Your order has been canceled.',
+          'Order Submitted ',
+          'Your order has been submitted.',
           'success'
         )
       } else if (
@@ -83,7 +83,7 @@ export class CustomOrderPageComponent implements OnInit {
       ) {
         swalWithBootstrapButtons.fire(
           'Order Cancelled',
-          'Your order was not placed:)',
+          'Your order was not placed',
           'error'
         )
       }
