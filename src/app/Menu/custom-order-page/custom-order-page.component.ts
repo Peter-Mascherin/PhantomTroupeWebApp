@@ -74,7 +74,7 @@ export class CustomOrderPageComponent implements OnInit {
 
         swalWithBootstrapButtons.fire(
           'Order Sumbited ',
-          'Your order has been canceled.',
+          'Your order has been placed.',
           'success'
         )
       } else if (
