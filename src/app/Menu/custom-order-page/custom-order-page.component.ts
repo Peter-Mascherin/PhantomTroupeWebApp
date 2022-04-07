@@ -34,11 +34,23 @@ export class CustomOrderPageComponent implements OnInit {
   "Item Covers","Leather Gloves","Holsters","Guitar Straps",
   "Belts","Bags","Miscellaneous"]
 
+  //adds the data to the interface and then use the service to send to the server
+  sentInfo(){
+    this.custData.fullName = this.formInfo.get('fullName')?.value;
+    this.custData.email = this.formInfo.get('email')?.value
+    this.custData.style = this.formInfo.get('style')?.value
+    this.custData.orderDetails = this.formInfo.get('orderDetails')?.value;
+
+    //send to service to server
+    this.formInfo.reset();
+    this.formService.sendToServer(this.custData);
+
+    console.log(this.custData)
+  }
 
 
   /**
-   * when click submit, it adds the data to the interface and 
-   * then use the service to send to the server
+   * when click submit, it asks the user to confirm and then sumbits the order details
    */
   onSubmit(){ 
 
@@ -61,16 +73,7 @@ export class CustomOrderPageComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this.custData.fullName = this.formInfo.get('fullName')?.value;
-        this.custData.email = this.formInfo.get('email')?.value
-        this.custData.style = this.formInfo.get('style')?.value
-        this.custData.orderDetails = this.formInfo.get('orderDetails')?.value;
-
-        //send to service to server
-        this.formInfo.reset();
-        this.formService.sendToServer(this.custData);
-    
-        console.log(this.custData)
+        this.sentInfo()
 
         swalWithBootstrapButtons.fire(
           'Order Sumbited ',
@@ -89,4 +92,6 @@ export class CustomOrderPageComponent implements OnInit {
       }
     })
   }
+
+
 }
