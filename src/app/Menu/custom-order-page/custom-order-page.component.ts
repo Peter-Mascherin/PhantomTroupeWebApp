@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class CustomOrderPageComponent implements OnInit {
  
    
-
+   defaultChoice : String = 'Choose option'
    formInfo = new FormGroup({});
    custData = {} as CustomerData; //will store data to our interface class
   
@@ -22,7 +22,7 @@ export class CustomOrderPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.formInfo = new FormGroup({
-      fullName: new FormControl('', [Validators.required]),
+      fullName: new FormControl('', [Validators.required, Validators.minLength(2)]),
       email: new FormControl('',[Validators.required, Validators.email]),
       style: new FormControl('', Validators.required),
       orderDetails: new FormControl('',[Validators.required, Validators.minLength(5)])
@@ -76,8 +76,8 @@ export class CustomOrderPageComponent implements OnInit {
         this.sentInfo()
 
         swalWithBootstrapButtons.fire(
-          'Order Sumbited ',
-          'Your order has been placed.',
+          'Order Submitted ',
+          'Your order has been submitted.',
           'success'
         )
       } else if (
@@ -86,7 +86,7 @@ export class CustomOrderPageComponent implements OnInit {
       ) {
         swalWithBootstrapButtons.fire(
           'Order Cancelled',
-          'Your order was not placed:(',
+          'Your order was not placed',
           'error'
         )
       }
