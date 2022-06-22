@@ -21,9 +21,12 @@ export class GalleryPageComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
-    this.url = window.location.origin; //will grab the url 
+    this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
+    //this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
+    
+    
     console.log('url='+this.url)
-
+    //src="{{url}}/images/woodstovegall{{i}}.jpg"
 
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
     

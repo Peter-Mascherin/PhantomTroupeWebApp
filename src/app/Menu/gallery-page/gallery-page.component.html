@@ -9,7 +9,13 @@
     <br/>
     <div class="gallerycontent" >
         <div class="imagediv" *ngFor="let item of gallerydata; let i = index" (click)="alertme(i)">
-            <img class="imgclass" src="{{url}}/images/woodstovegall{{i}}.jpg" width="300px" height="300px">
+
+            <!-- THIS IS FOR LOCALHOST TESTING-->
+            <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px"> 
+
+            <!--THIS IS FOR PRODUCTION TO TALK TO SERVER-->
+            <!--<img class="imgclass" src="{{url}}/images/woodstovegall{{i}}.jpg" width="300px" height="300px"> -->
+
             <h4 class="imginfo">{{item.imgtitle}}</h4>
         </div>
     </div>
