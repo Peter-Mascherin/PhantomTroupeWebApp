@@ -16,13 +16,15 @@ export class GalleryPageComponent implements OnInit {
   url: string = "";
   picurl: string ="";
 
+  templimit = 100;
+
   gallerydata: GalleryPics[] = JSONGallery;
   personaldata: any;
   ngOnInit(): void {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
-    this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
-    //this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
+    //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
+    this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
     
     
     console.log('url='+this.url)
@@ -42,6 +44,10 @@ export class GalleryPageComponent implements OnInit {
       data: galitem,
       panelClass: 'dialog-container-custom'
     });
+  }
+
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 
   

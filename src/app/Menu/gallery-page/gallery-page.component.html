@@ -8,15 +8,15 @@
     
     <br/>
     <div class="gallerycontent" >
-        <div class="imagediv" *ngFor="let item of gallerydata; let i = index" (click)="alertme(i)">
+        <div class="imagediv" *ngFor="let item of numSequence(100); let i = index" (click)="alertme(i)">
 
             <!-- THIS IS FOR LOCALHOST TESTING-->
-            <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px"> 
+            <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px" loading="lazy"> 
 
             <!--THIS IS FOR PRODUCTION TO TALK TO SERVER-->
             <!--<img class="imgclass" src="{{url}}/images/woodstovegall{{i}}.jpg" width="300px" height="300px"> -->
 
-            <h4 class="imginfo">{{item.imgtitle}}</h4>
+            <!--<h4 class="imginfo">{{item.imgtitle}}</h4> -->
         </div>
     </div>
     <br/>
