@@ -1,14 +1,14 @@
 <div class="gallerypagewrapper">
     <div class="galleryheader">
         <h1>The Gallery Page</h1>
-        <h4>The gallery page is a showcase of many different items that Woodstove Leather Goods makes. It includes a variety of things from leather belts , custom wallets , customer backpacks
+        <h4>The gallery page is a showcase of many different items that Woodstove Leather Goods makes. It includes a variety of things from leather belts , custom wallets , custom backpacks
             and many more. To view information about a item simply click on the item and a card will popup with its information. Thank you for visiting Woodstove Leather Goods
         </h4>
     </div>
     
     <br/>
     <div class="gallerycontent" >
-        <div class="imagediv" *ngFor="let item of numSequence(100); let i = index" (click)="alertme(i)">
+        <div class="imagediv" *ngFor="let item of numSequence(863); let i = index" (click)="alertme(i)">
 
             <!-- THIS IS FOR LOCALHOST TESTING-->
             <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px" loading="lazy"> 

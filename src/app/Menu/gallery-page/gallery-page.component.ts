@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { GalleryPics } from './GalleryInterface';
 import {MatDialog} from '@angular/material/dialog';
-import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json';
+//import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json'; //old one
+import JSONGallery from '../gallery-page/galleryjson/jsonsuperbatch.json'; //server json
+//import JSONGallery from '../gallery-page/galleryjson/localjsonsuperbatch.json'; //local json (for popup images)
 import { GalleryDialogComponentComponent } from './gallery-dialog-component/gallery-dialog-component.component';
 
 
@@ -15,15 +17,18 @@ export class GalleryPageComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   url: string = "";
   picurl: string ="";
+  localhoststring: string = "http://localhost:3000";
 
   templimit = 100;
 
   gallerydata: GalleryPics[] = JSONGallery;
   personaldata: any;
   ngOnInit(): void {
+    
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
     //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
+    //this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST , NOT WITH PACKAGE
     this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
     
     
@@ -46,6 +51,7 @@ export class GalleryPageComponent implements OnInit {
     });
   }
 
+  //this function is for testing
   numSequence(n: number): Array<number> {
     return Array(n);
   }

@@ -11,7 +11,11 @@ export class GalleryDialogComponentComponent implements OnInit {
 
   constructor(public dialogref: MatDialogRef<GalleryDialogComponentComponent>, @Inject(MAT_DIALOG_DATA) public data: GalleryPics) { }
 
+  localhoststring: string = "http://localhost:3000"; //ONLY FOR LOCALHOST SERVER TESTING
+  url: string = "../../../assets/images/galleryimages/woodstovegall"; //ONLY FOR LOCALHOST
+
   ngOnInit(): void {
+    this.url = this.url + this.data.imgid + ".jpg";
   }
 
 
