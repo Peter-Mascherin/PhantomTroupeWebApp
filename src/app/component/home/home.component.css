@@ -79,6 +79,10 @@ body{
 {
     /*background-color: rgba(223, 211, 211, 0.473);*/
     /*background-color: rgba(10, 10, 10, 0.95);*/
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-gap: 0;
     background-color: rgba(24, 23, 23,0.95);
     backdrop-filter: blur(3px);
     width: 100%;
@@ -89,8 +93,26 @@ body{
     color:white;
     font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 2px rgb(122, 122, 122);
-    padding: 24px;
     
+    
+}
+
+.socialheader
+{
+    text-align: center;
+    margin-bottom: 0;
+    padding: 4px;
+    
+}
+
+.facebookfeeddiv
+{
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.facebookiframe
+{
+    border-radius: 2px 2px 8px 8px;
 }
 .pic{
     height: 450px;
