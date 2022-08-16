@@ -8,7 +8,7 @@
     
     <br/>
     <div class="gallerycontent" >
-        <div class="imagediv" *ngFor="let item of numSequence(863); let i = index" (click)="alertme(i)">
+        <div class="imagediv" *ngFor="let item of gallerydata; let i = index" (click)="alertme(i)">
 
             <!-- THIS IS FOR LOCALHOST TESTING-->
             <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px" loading="lazy"> 
