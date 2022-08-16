@@ -24,6 +24,8 @@ import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import { GalleryDialogComponentComponent } from './Menu/gallery-page/gallery-dialog-component/gallery-dialog-component.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminPageComponent } from './Admin/admin-page/admin-page.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryPageComponent,
     CustomOrderPageComponent,
     PayPageComponent,
-    GalleryDialogComponentComponent 
+    GalleryDialogComponentComponent,
+    AdminPageComponent,
+    AdminDashboardComponent 
   ],
   imports: [
     BrowserModule,

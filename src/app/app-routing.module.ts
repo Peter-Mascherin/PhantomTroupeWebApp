@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPageComponent } from './Admin/admin-page/admin-page.component';
 import { HomeComponent } from './component/home/home.component';
 import { AboutPageComponent } from './Menu/about-page/about-page.component';
 import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-page.component';
 import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
+import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component'; 
 
 // Defined the router paths
 const routes: Routes = [
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'pay',
     component: PayPageComponent
+  },
+  {
+    path: 'admin',
+    component: AdminPageComponent
+  },
+  {
+    path: 'admin-Dashboard',
+    component: AdminDashboardComponent
   },
   {
     path: '',

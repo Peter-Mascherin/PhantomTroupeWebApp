@@ -72,6 +72,17 @@ body{
     width: 100%;
 }
 
+.hideButton
+{
+    background-color: rgb(24, 23, 23); 
+    color: rgb(24, 23, 23);
+    border: 2px solid rgb(24, 23, 23);
+}
+
+.hideButton:hover{
+    color: red;  
+}
+
 .socialdiv
 {
     /*background-color: rgba(223, 211, 211, 0.473);*/
