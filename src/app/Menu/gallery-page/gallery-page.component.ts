@@ -29,7 +29,7 @@ export class GalleryPageComponent implements OnInit {
     
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
-    console.log(JSONGallery);
+    //console.log(JSONGallery);
     //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
     //this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST , NOT WITH PACKAGE
     this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
@@ -39,7 +39,7 @@ export class GalleryPageComponent implements OnInit {
     //src="{{url}}/images/woodstovegall{{i}}.jpg"
 
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
-    this.showKeychains()
+    this.showKeychains() //decided keychains will be the default to show on load
   }
 
   alertme(id: number)
@@ -61,33 +61,33 @@ export class GalleryPageComponent implements OnInit {
 
   //functions to show different gallery images
   showKeychains(){
-    console.log("test keychains")
+    console.log("keychains")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Keychains'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
   showSuspenders(){
-    console.log("test suspenders")
+    console.log("suspenders")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Suspenders'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
     
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -97,12 +97,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Journal'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -112,12 +112,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Bag'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -127,12 +127,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Strap'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -142,12 +142,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Collars'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -157,12 +157,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Belt'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   }
 
@@ -172,12 +172,12 @@ export class GalleryPageComponent implements OnInit {
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Wallet'){
-        console.log(this.gallerydata[i])
+        //console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    console.log(this.catGalImg)
+    //console.log(this.catGalImg)
     console.log(count)
   } 
 }
