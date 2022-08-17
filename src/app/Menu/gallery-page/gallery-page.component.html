@@ -5,13 +5,24 @@
             and many more. To view information about a item simply click on the item and a card will popup with its information. Thank you for visiting Woodstove Leather Goods
         </h4>
     </div>
+
+    <div class="galleryCategory">   
+        <a id="cat" (click)="showKeychains()">KEYCHAINS</a>
+        <a id="cat" (click)="showSuspenders()">SUSPENDERS</a>
+        <a id="cat" (click)="showJournals()">JOURNALS</a>
+        <a id="cat" (click)="showBags()">BAGS</a>
+        <a id="cat" (click)="showStraps()">STRAPS</a>
+        <a id="cat" (click)="showCollars()">COLLARS</a>
+        <a id="cat" (click)="showBelts()">BELTS</a>
+        <a id="cat" (click)="showWallets()">WALLETS</a>  
+    </div>
     
     <br/>
     <div class="gallerycontent" >
-        <div class="imagediv" *ngFor="let item of gallerydata; let i = index" (click)="alertme(i)">
+        <div class="imagediv" *ngFor="let c of catGalImg; let i = index" (click)="alertme(c)">
 
             <!-- THIS IS FOR LOCALHOST TESTING-->
-            <img class="imgclass" src="{{url}}woodstovegall{{i}}.jpg" width="300px" height="300px" loading="lazy"> 
+            <img *ngIf="c != null" class="imgclass" src="{{url}}woodstovegall{{c}}.jpg" width="300px" height="300px" loading="lazy"> 
 
             <!--THIS IS FOR PRODUCTION TO TALK TO SERVER-->
             <!--<img class="imgclass" src="{{url}}/images/woodstovegall{{i}}.jpg" width="300px" height="300px"> -->

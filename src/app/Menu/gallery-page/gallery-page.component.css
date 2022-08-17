@@ -59,7 +59,9 @@ h1
     transition: box-shadow 100ms ease-in-out;
 }
 
-
+.imagediv:empty{
+    display: none;
+}
 
 .imagediv:hover
 {
@@ -81,3 +83,28 @@ h1
     word-wrap: normal;
     justify-self: center;
 }
+
+.galleryCategory{
+    background-color: rgba(24, 23, 23,0.95);
+    backdrop-filter: blur(3px);
+    padding:5px;
+    margin:5px;
+    text-align:center;
+    border-radius: 12px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cat{
+    font-family: 'League Gothic';
+    font-size: 30px;
+    padding: 40px;
+    display: inline;
+    color: white;
+}
+
+#cat:hover{
+    color: rgb(248, 232, 88);
+    cursor: pointer;
+  }

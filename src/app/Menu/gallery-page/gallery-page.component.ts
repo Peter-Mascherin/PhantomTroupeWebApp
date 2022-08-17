@@ -23,6 +23,8 @@ export class GalleryPageComponent implements OnInit {
 
   gallerydata: GalleryPics[] = JSONGallery;
   personaldata: any;
+  catGalImg: number [] = [];
+
   ngOnInit(): void {
     
     console.log(this.gallerydata);
@@ -37,7 +39,7 @@ export class GalleryPageComponent implements OnInit {
     //src="{{url}}/images/woodstovegall{{i}}.jpg"
 
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
-    
+    this.showKeychains()
   }
 
   alertme(id: number)
@@ -57,5 +59,125 @@ export class GalleryPageComponent implements OnInit {
     return Array(n);
   }
 
-  
+  //functions to show different gallery images
+  showKeychains(){
+    console.log("test keychains")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Keychains'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showSuspenders(){
+    console.log("test suspenders")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Suspenders'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showJournals(){
+    console.log('testing journals')
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Journal'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showBags(){
+    console.log("test bags")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Bag'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showStraps(){
+    console.log("test straps")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Strap'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showCollars(){
+    console.log("test collars")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Collars'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showBelts(){
+    console.log("test belts")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Belt'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  }
+
+  showWallets(){
+    console.log("test wallets")
+    var count = 0
+    this.catGalImg = []
+    for (let i = 0; i < this.gallerydata.length; i++) {
+      if (this.gallerydata[i].category == 'Wallet'){
+        console.log(this.gallerydata[i])
+        this.catGalImg[i] = this.gallerydata[i].imgid
+        count++
+      }
+    }
+    console.log(this.catGalImg)
+    console.log(count)
+  } 
 }
