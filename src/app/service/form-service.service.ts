@@ -30,8 +30,21 @@ export class FormServiceService {
       //console.log(val);
     })
   }
+
+
 //-------------------------------------------------------
 
+//used to get the gallery json
+getGalleryInfo()
+{
 
+  var params = {
+    text: ""
+  }
+
+  //return this.http.get("http://127.0.0.1:3000/galleryinfo");
+  console.log("hi there gal")
+  return this.http.get("http://127.0.0.1:3000/gall")
+}
  
 }
