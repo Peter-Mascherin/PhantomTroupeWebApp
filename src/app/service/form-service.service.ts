@@ -37,13 +37,15 @@ export class FormServiceService {
 //used to get the gallery json
 getGalleryInfo()
 {
+  //the commented code is for production only , to find server name
+  // var url_location = window.location.origin;
+  //return this.http.get(url_location + "/galleryinfo");
 
   var params = {
     text: ""
   }
-
   //return this.http.get("http://127.0.0.1:3000/galleryinfo");
-  console.log("hi there gal")
+  //this return code is for localhost only , uncomment the top one and comment this one out when deploying to production
   return this.http.get("http://127.0.0.1:3000/gall")
 }
  
