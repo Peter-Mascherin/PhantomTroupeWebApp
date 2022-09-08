@@ -25,6 +25,8 @@ export class FormServiceService {
       //console.log(val);
     })
   }
+
+
 //-------------------------------------------------------
 
 /**
@@ -74,10 +76,19 @@ performLogOutAction(){
 
 
 
-// return this.http.get("http://127.0.0.1:3000/gall", {responseType: 'text'}).
-// subscribe(val => {
-//   console.log(val)
-// });
+///used to get the gallery json
+getGalleryInfo()
+{
+  //the commented code is for production only , to find server name
+  // var url_location = window.location.origin;
+  //return this.http.get(url_location + "/galleryinfo");
 
- 
+  var params = {
+    text: ""
+  }
+ //return this.http.get(this.url_location + "/gall"); //production
+ return this.http.get("http://127.0.0.1:3000/gall") //local
+}
+
+
 }

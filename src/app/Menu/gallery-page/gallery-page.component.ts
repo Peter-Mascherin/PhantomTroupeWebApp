@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material/dialog';
 import JSONGallery from '../gallery-page/galleryjson/jsonsuperbatch.json'; //server json
 //import JSONGallery from '../gallery-page/galleryjson/localjsonsuperbatch.json'; //local json (for popup images)
 import { GalleryDialogComponentComponent } from './gallery-dialog-component/gallery-dialog-component.component';
+import { FormServiceService } from 'src/app/service/form-service.service';
 
 
 @Component({
@@ -14,19 +15,22 @@ import { GalleryDialogComponentComponent } from './gallery-dialog-component/gall
 })
 export class GalleryPageComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private gallservice: FormServiceService) { }
   url: string = "";
   picurl: string ="";
+  testtext: string = "";
   localhoststring: string = "http://localhost:3000";
 
   templimit = 100;
 
   gallerydata: GalleryPics[] = JSONGallery;
+  
   personaldata: any;
+  
   catGalImg: number [] = [];
 
   ngOnInit(): void {
-    
+    this.setGalleryJSON();
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
     //console.log(JSONGallery);
@@ -52,6 +56,17 @@ export class GalleryPageComponent implements OnInit {
       data: galitem,
       panelClass: 'dialog-container-custom'
     });
+  }
+
+  setGalleryJSON()
+  {
+      var jsonrecieve: any;
+    this.gallservice.getGalleryInfo().subscribe(data => {
+      jsonrecieve = data;
+      var jsonobject = JSON.parse(jsonrecieve["json"])
+      console.log(jsonobject);
+      this.gallerydata = jsonobject;
+    })
   }
 
   //this function is for testing
