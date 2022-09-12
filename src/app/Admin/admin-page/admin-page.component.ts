@@ -25,7 +25,7 @@ export class AdminPageComponent implements OnInit {
     Swal.fire({
       icon: 'error',
       title: 'Input error',
-      text: 'Worng Password or Username',
+      text: 'Invalid Password or Username',
     })
   }
 

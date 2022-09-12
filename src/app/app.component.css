@@ -80,7 +80,7 @@ body{
 }
 
 .hideButton:hover{
-    color: red;  
+    color: rgba(7, 7, 7, 0.349);  
 }
 
 .socialdiv
