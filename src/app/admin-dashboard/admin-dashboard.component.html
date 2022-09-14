@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
+
 <body>
 <button mat-button (click)="userLogOut()" style="float: right;" color="warn">Log out</button>
 <nav class="navbar navbar-inverse visible-xs">
@@ -38,11 +39,76 @@
     <div class="col-sm-9">
       <div class="well">
         <h4>Dashboard</h4>
-        <p>Some things..</p>
+        <button class="btn btn-default">Load Data</button>
+        <div class = "tableDiv">
+        <table class="table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th>Order Number</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Style</th>
+                  <th>Approve/Cancel</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let field of fieldArray; let i = index">
+                  <td>
+                      <input readonly [(ngModel)]="field.num" class="form-control" type="number" name="{{field.num}}" />
+                  </td>
+                  <td>
+                    <input readonly [(ngModel)]="field.date" class="form-control" type="datetime" name="{{field.date}}" />
+                </td>
+                  <td>
+                      <input readonly [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" />
+                  </td>
+                  <td>
+                      <input readonly [(ngModel)]="field.email" class="form-control" type="email" name="{{field.email}}" />
+                  </td>
+                  <td>
+                    <input readonly [(ngModel)]="field.style" class="form-control" type="text" name="{{field.style}}" />
+                </td>
+                <td>
+                  <button  class="Approved">Approved</button><button class="Cancel">Cancel</button>
+              </td>
+                <td>
+                  <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+              </td>
+              </tr>
+              <tr>
+                
+                  <td>
+                      <input readonly class="form-control" type="number" id="newAttributeDate" [(ngModel)]="newAttribute.num" name="newAttributeNum" />
+                  </td>
+                  <td>
+                    <input readonly class="form-control" type="date" id="newAttributeDate" [(ngModel)]="newAttribute.date" name="newAttributeDate" />
+                </td>
+                  <td>
+                      <input readonly class="form-control" type="text" id="newAttributeName" [(ngModel)]="newAttribute.name" name="newAttributeName" />
+                  </td>
+                  <td>
+                    <input readonly class="form-control" type="email" id="newAttributeEmail" [(ngModel)]="newAttribute.email" name="newAttributeEmail" />
+                </td>
+                  <td>
+                      <input readonly class="form-control" type="text" id="newAttributeStyle" [(ngModel)]="newAttribute.style" name="newAttributeStyle" />
+                  </td>
+                  <td>
+                    <button readonly class="Approved">Approved</button><button class="Cancel">Cancel</button>
+                </td>
+                <td>
+                  <button readonly class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+              </td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
       </div>
     </div>
     </div>
 </div>
+
+
 
 </body>
 </html>
