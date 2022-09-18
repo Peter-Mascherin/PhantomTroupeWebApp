@@ -14,27 +14,26 @@ export class FormServiceService {
   url_location = window.location.origin;
   resultData = {} as ResultData;
  
-
-  //send data to server
-  //wont work unless run -- ng build and put dist folder in server 
+  /**
+   * 
+   * @param cust: pass the customer details to the server
+   * wont work unless run -- ng build and put dist folder in server 
+   */
   sendToServer(cust: CustomerData){
     this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
     // this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
     .subscribe(val => {
       console.log(val)
-      //console.log(val);
     })
   }
 
 
-//-------------------------------------------------------
-
 /**
  * Sends the login data to server and authenticate
+ * only be tested in production
  * @param loginData 
  * @returns 
  */
-//only be tested in production
 sendLoginServer(loginData: LoginData){
   return this.http.post(this.url_location +"/apis/login", {loginData});
 
@@ -72,6 +71,15 @@ performLogOutAction(){
    })
 }
 
+/**
+ * 
+ * @returns pending orders from the backend
+ */
+retrievePendingOrders(){
+  return this.http.get(this.url_location+"/apis/retrieveCustomerData")       // Production
+  //return this.http.get("http://127.0.0.1:3000/apis/retrieveCustomerData") //Local
+}
+
 
 
 
@@ -86,8 +94,8 @@ getGalleryInfo()
   var params = {
     text: ""
   }
- //return this.http.get(this.url_location + "/gall"); //production
- return this.http.get("http://127.0.0.1:3000/gall") //local
+ return this.http.get(this.url_location + "/gall"); //production
+ //return this.http.get("http://127.0.0.1:3000/gall") //local
 }
 
 
