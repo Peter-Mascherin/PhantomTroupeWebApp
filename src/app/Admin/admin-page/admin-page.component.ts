@@ -41,17 +41,14 @@ export class AdminPageComponent implements OnInit {
      else{
       this.wrong();
      }
-  })
-
-
-
+  })  
     
   }
 
   btnCancel(){
    //exits and goes home
   }
-
+// if the users inputs a wrong username or password then this fun will alter the user
   wrong(){ 
     Swal.fire({
       icon: 'error',

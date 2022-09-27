@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <!--Nav bar and the main body-->
 <button mat-button (click)="userLogOut()" style="float: right;" color="warn">Log out</button>
 <nav class="navbar navbar-inverse visible-xs">
   <div class="container-fluid">
@@ -52,6 +53,7 @@
                   <th>Approve/Cancel</th>
               </tr>
           </thead>
+          <!--This is the table with data from the backend-->
           <tbody>
               <tr *ngFor="let field of fieldArray; let i = index">
                   <td>
@@ -84,7 +86,7 @@
                   
                  
               </td>
-               <!--
+               <!-- to be 
                 <td>
                   <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
               </td>
