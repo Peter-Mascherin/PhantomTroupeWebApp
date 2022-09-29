@@ -76,8 +76,8 @@ performLogOutAction(){
  * @returns pending orders from the backend
  */
 retrievePendingOrders(){
-  return this.http.get(this.url_location+"/apis/retrieveCustomerData")       // Production
-  //return this.http.get("http://127.0.0.1:3000/apis/retrieveCustomerData") //Local
+  //return this.http.get(this.url_location+"/apis/retrieveCustomerData")       // Production
+  return this.http.post("http://127.0.0.1:3000/apis/retrieveCustomerData", {responseType: "json"}) //Local
 }
 
 

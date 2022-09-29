@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 import { CustomerData } from '../interfaces/CustomerData';
 import { FormServiceService } from '../service/form-service.service';
 
@@ -12,6 +13,7 @@ export class AdminDashboardComponent implements OnInit {
 
   public  fieldArray: Array<CustomerData> = [];
   public newAttribute: any = {};
+  public field: Array<CustomerData> = [];
 
   constructor(private activatedRoute: ActivatedRoute, private service: FormServiceService) { }
 
@@ -36,10 +38,7 @@ export class AdminDashboardComponent implements OnInit {
   addFieldValue() {
     this.fieldArray.push(this.newAttribute)
     this.newAttribute = {};
-    console.log(this.newAttribute.num)
-    console.log(this.newAttribute.data)
-    console.log(this.newAttribute.name)
-    console.log(this.newAttribute.style)
+
 }
 
   deleteFieldValue(index: number) {
@@ -55,6 +54,27 @@ retrievePendingOrders(){
     this.fieldArray = val as [];
   }
   );
+}
+showDetails(_field: any){ 
+
+  const details = 
+  `
+  Order Number:  ${_field._id }   
+  Date:          ${_field.orderDate }
+  Name:          ${_field.fullName } 
+  Email:         ${_field.email }
+  Style:         ${_field.style}
+  `
+
+  Swal.fire({
+    title: 'Order Details',
+    text: details,
+    width: 1000,
+    padding: '3em',
+    color: '#black',
+   
+  })
+  
 }
 
 

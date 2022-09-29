@@ -27,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminPageComponent } from './Admin/admin-page/admin-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DatePipe } from '@angular/common';
-
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table'
 
 
 @NgModule({
@@ -60,6 +61,8 @@ import { DatePipe } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTabsModule,
+    MatTableModule,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
