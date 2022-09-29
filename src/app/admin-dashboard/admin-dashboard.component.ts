@@ -59,23 +59,18 @@ showDetails(_field: any){
 
   const details = 
   `
-  Order Number:  ${_field._id }   
+  Order Number:  ${_field._id } 
   Date:          ${_field.orderDate }
   Name:          ${_field.fullName } 
   Email:         ${_field.email }
   Style:         ${_field.style}
   `
-
   Swal.fire({
-    title: 'Order Details',
-    text: details,
+    title: details,
     width: 1000,
     padding: '3em',
-    color: '#black',
-   
+    color: '#black',   
   })
-  
+ 
 }
-
-
 }
