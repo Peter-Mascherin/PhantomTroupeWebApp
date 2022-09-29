@@ -64,10 +64,10 @@
                    
                  </td>
                    <td class="inTable">
-                      <button class="Approved">Approve</button>
+                      <button class="Approved" (click)="showApprove()">Approve</button>
                    </td>
                    <td class="inTable">
-                      <button class="Cancel">Cancel</button>
+                      <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
                    </td>
                  </tr>
                </table>
@@ -123,6 +123,51 @@
                 <th>Style</th>
             </tr>
         </thead>
+           <!--This is the table with data from the backend
+           <tbody>
+            <tr *ngFor="let field of cancelField; let i = index">
+                <td>
+                  <div>  {{field._id }}  </div>
+                </td>
+                <td>
+                  <div> {{field.orderDate}} </div>
+                </td> 
+                <td>
+                    <div> {{field.fullName.replaceAll('\"', '')}}</div> 
+                </td>
+                <td>
+                  <div> {{field.email.replaceAll('\"', '')}}</div> 
+                </td>
+                <td>
+                  <div> {{field.style.replaceAll('\"', '')}}</div> 
+                </td>
+                <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+              <td>
+               <table class="inTable">
+                 <tr class="inTable">
+                  <td class="inTable">
+                   
+                 </td>
+                   <td class="inTable">
+                      <button class="Approved">Approve</button>
+                   </td>
+                   <td class="inTable">
+                      <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
+                   </td>
+                 </tr>
+               </table>
+            </td>-->
+             <!-- to be 
+              <td>
+                <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+            </td>
+
+             </tr>
+          
+        </tbody>
+        
+             --> 
+           
         </table>
         </div>
         </div>

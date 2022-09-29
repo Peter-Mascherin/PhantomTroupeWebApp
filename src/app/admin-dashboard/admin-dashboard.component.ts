@@ -14,6 +14,8 @@ export class AdminDashboardComponent implements OnInit {
   public  fieldArray: Array<CustomerData> = [];
   public newAttribute: any = {};
   public field: Array<CustomerData> = [];
+  public cancelField: Array<CustomerData> = [];
+
 
   constructor(private activatedRoute: ActivatedRoute, private service: FormServiceService) { }
 
@@ -73,6 +75,71 @@ showDetails(_field: any){
     padding: '3em',
     color: '#black',   
   })
- 
 }
+
+async showApprove(){
+  const { value: price } = await Swal.fire({
+    title: 'Enter your Price',
+    input: 'number',
+  })
+  if (price) {
+    //Swal.fire(`Entered Price: ${price}`)
+    this.showApprove2()
+  }
+}
+  async showApprove2(){
+  const { value: text } = await Swal.fire({
+    input: 'textarea',
+    inputLabel: 'Message',
+    inputPlaceholder: 'Type your message here...',
+    inputAttributes: {
+      'aria-label': 'Type your message here'
+    },
+    showCancelButton: true
+  })
+  
+  if (text) {
+    Swal.fire('An Email has been sent to the client with the message and the price')
+  }
+}
+
+
+// for now only removes the order
+moveToCancelTab(_field: any, index: number){
+  console.log(_field.fullName)
+  console.log(index)
+
+  const orderNum = _field.orderNumber
+  const orderDate = _field.orderDate
+  const orderName = _field.fullName
+  const email = _field.email
+  const style = _field.style
+  const orderDetails = _field.orderDetails
+
+  //this will delete the order
+  //this.deleteFieldValue(index)
+}
+
+cancel(_field: any, index: number){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'The order has been deleted.',
+        'success'
+      )
+      this.moveToCancelTab(_field, index)
+      //console.log(_field.fullName, index)
+    }
+  })
+}
+
 }
