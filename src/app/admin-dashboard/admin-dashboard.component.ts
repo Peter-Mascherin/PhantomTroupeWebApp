@@ -90,7 +90,7 @@ async showApprove(){
   title: 'Enter Price and a Message',
   html:
     '<label for="Price">Enter Price</label>' +
-    '<input id="swal-input1" class="swal2-input">' +
+    '<input id="swal-input1" type="number" class="swal2-input">' +
     '<br/>' + '<br/>' +
     '<center><label for="mess">Enter Message</label></center>' +
     '<textarea rows="5" cols="50" id="multiLineInput"></textarea>',
