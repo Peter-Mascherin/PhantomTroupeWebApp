@@ -64,9 +64,11 @@ showDetails(_field: any){
   Name:          ${_field.fullName } 
   Email:         ${_field.email }
   Style:         ${_field.style}
+  Details:       ${ _field.orderDetails}
   `
   Swal.fire({
     title: details,
+    heightAuto: true,
     width: 1000,
     padding: '3em',
     color: '#black',   
