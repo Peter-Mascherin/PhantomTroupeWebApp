@@ -56,6 +56,7 @@ retrievePendingOrders(){
   );
 }
 showDetails(_field: any){ 
+  
 
   const details = 
   `
@@ -64,6 +65,7 @@ showDetails(_field: any){
   Name:          ${_field.fullName } 
   Email:         ${_field.email }
   Style:         ${_field.style}
+  Order Details: ${_field.orderDetails}
   `
   Swal.fire({
     title: details,
