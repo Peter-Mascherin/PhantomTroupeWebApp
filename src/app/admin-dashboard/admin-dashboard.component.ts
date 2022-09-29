@@ -72,7 +72,6 @@ showDetails(_field: any){
   Swal.fire({
     title: details,
     heightAuto: true,
-    width: auto,
     padding: '3em',
     color: '#black',   
   })
@@ -102,7 +101,7 @@ async showApprove(){
 })
 if (formValues) {
   //Swal.fire(JSON.stringify(formValues))
-  Swal.fire('An Email has been sent to the client with the message and the price')
+  Swal.fire('An Email has been sent to the client')
 }
 }
  /* async showApprove2(){
