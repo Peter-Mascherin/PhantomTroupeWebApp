@@ -7,6 +7,7 @@ import { CustomOrderPageComponent } from './Menu/custom-order-page/custom-order-
 import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component';
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component'; 
+import { RouteResolver } from './Resolver/RouteResolver';
 
 // Defined the router paths
 const routes: Routes = [
@@ -32,11 +33,17 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminPageComponent
-  },
+    component: AdminPageComponent,
+    resolve: {
+      data: RouteResolver
+    }
+  }, 
   {
-    path: 'admin-Dashboard',
-    component: AdminDashboardComponent
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent,
+    resolve: {
+      data: RouteResolver
+    }
   },
   {
     path: '',
@@ -47,6 +54,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [RouteResolver]
 })
 export class AppRoutingModule { }

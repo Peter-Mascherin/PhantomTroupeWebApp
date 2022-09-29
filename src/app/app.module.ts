@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPageComponent } from './Admin/admin-page/admin-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -60,7 +61,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
