@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { auto } from '@popperjs/core';
 import Swal from 'sweetalert2';
 import { CustomerData } from '../interfaces/CustomerData';
 import { FormServiceService } from '../service/form-service.service';
@@ -71,23 +72,40 @@ showDetails(_field: any){
   Swal.fire({
     title: details,
     heightAuto: true,
-    width: 1000,
+    width: auto,
     padding: '3em',
     color: '#black',   
   })
 }
 
 async showApprove(){
-  const { value: price } = await Swal.fire({
+  /*const { value: price } = await Swal.fire({
     title: 'Enter your Price',
     input: 'number',
   })
   if (price) {
     //Swal.fire(`Entered Price: ${price}`)
     this.showApprove2()
-  }
+  }*/
+  const { value: formValues } = await Swal.fire({
+  title: 'Enter Price and a Message',
+  html:
+    '<label for="Price">Enter Price</label>' +
+    '<input id="swal-input1" class="swal2-input">' +
+    '<br/>' + '<br/>' +
+    '<center><label for="mess">Enter Message</label></center>' +
+    '<textarea rows="5" cols="50" id="multiLineInput"></textarea>',
+  focusConfirm: false,
+  width: 1000,
+  padding: '3em',
+  color: '#black'
+})
+if (formValues) {
+  //Swal.fire(JSON.stringify(formValues))
+  Swal.fire('An Email has been sent to the client with the message and the price')
 }
-  async showApprove2(){
+}
+ /* async showApprove2(){
   const { value: text } = await Swal.fire({
     input: 'textarea',
     inputLabel: 'Message',
@@ -119,7 +137,7 @@ moveToCancelTab(_field: any, index: number){
   //this will delete the order
   //this.deleteFieldValue(index)
 }
-
+*/
 cancel(_field: any, index: number){
   Swal.fire({
     title: 'Are you sure?',
@@ -136,7 +154,7 @@ cancel(_field: any, index: number){
         'The order has been deleted.',
         'success'
       )
-      this.moveToCancelTab(_field, index)
+      //this.moveToCancelTab(_field, index)
       //console.log(_field.fullName, index)
     }
   })
