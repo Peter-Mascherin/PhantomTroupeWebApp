@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { auto } from '@popperjs/core';
 import Swal from 'sweetalert2';
 import { CustomerData } from '../interfaces/CustomerData';
@@ -18,12 +19,28 @@ export class AdminDashboardComponent implements OnInit {
   public cancelField: Array<CustomerData> = [];
 
 
+
   constructor(private activatedRoute: ActivatedRoute, private service: FormServiceService) { }
+
+  //this list is to match the gallery categories
+  categoryList = ["Keychains",
+  "Suspenders",
+  "Journal",
+  "Bag",
+  "Strap",
+  "Collars",
+  "Belt",
+  "Wallet",
+  ]
+
+  imagesrc: String = "";
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data=> {
       console.log("User logged in") //delete after production
     })
+
+    
 
     /**
      * fetch data from the backend to retreive all the orders
@@ -31,6 +48,15 @@ export class AdminDashboardComponent implements OnInit {
     this.retrievePendingOrders();
     //retrieveApprovedOrders(); //TBC SOON
     //retrieveCompletedOrders(); //TBC soon
+  }
+
+  showfile(event: any)
+  {
+    var imagefilelist = event.target.files;
+    var theimage = document.getElementById("previewimage") as HTMLImageElement;
+    theimage.src = URL.createObjectURL(imagefilelist[0]);
+    
+    
   }
 
   userLogOut(){

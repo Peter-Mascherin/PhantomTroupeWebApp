@@ -32,9 +32,16 @@ export class CustomOrderPageComponent implements OnInit {
   }
 
   //to be added to and grabbed from service
-  categoryList = ["Wallets","Leather Jewellery","Pet Collars & Leashes",
-  "Item Covers","Leather Gloves","Holsters","Guitar Straps",
-  "Belts","Bags","Miscellaneous"]
+  categoryList = ["Keychains",
+  "Suspenders",
+  "Journal",
+  "Bag",
+  "Strap",
+  "Collars",
+  "Belt",
+  "Wallet",
+  ]
+
 
   //adds the data to the interface and then use the service to send to the server
   sentInfo(){

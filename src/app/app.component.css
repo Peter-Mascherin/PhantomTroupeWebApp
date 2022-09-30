@@ -76,7 +76,8 @@ body{
 {
     background-color: rgb(24, 23, 23); 
     color: rgb(24, 23, 23);
-    border: 2px solid rgb(24, 23, 23);
+    border: none;
+    
 }
 
 .hideButton:hover{
