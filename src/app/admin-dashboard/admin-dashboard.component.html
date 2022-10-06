@@ -19,13 +19,13 @@
 
 
 <!--This tab is the pending  tab -->
-<mat-tab-group >
+<mat-tab-group (selectedTabChange)="tabChanged($event)">
   <mat-tab label="Pending">
         
   <div>
     <div class="well">
       <h1>Pending Orders</h1>
-      <button class="btn btn-default">Reload Data</button>
+      <button class="btn btn-default" (click)="reloadData()">Reload Data</button>
       <div class = "tableDiv">
       <table class="table table-striped table-bordered">
         <thead>
@@ -65,7 +65,7 @@
                    
                  </td>
                    <td class="inTable">
-                      <button class="Approved" (click)="showApprove()">Approve</button>
+                      <button class="Approved" (click)="showApprove(field,i)">Approve</button>
                    </td>
                    <td class="inTable">
                       <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
@@ -91,7 +91,7 @@
   <mat-tab label="Approved">
     <div class="well">
       <h1>Approved Orders</h1>
-      <button class="btn btn-default">Reload Data</button>
+      <button class="btn btn-default" (click)="reloadData()">Reload Data</button>
       <div class = "tableDiv">
       <table class="table table-striped table-bordered">
         <thead>
@@ -101,18 +101,66 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Style</th>
+                <th>Details</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
+        <tbody>
+          <tr *ngFor="let field of fieldArray; let i = index">
+              <td>
+                <div>  {{field._id }}  </div>
+              </td>
+              <td>
+                <div> {{field.orderDate}} </div>
+              </td> 
+              <td>
+                  <div> {{field.fullName.replaceAll('\"', '')}}</div> 
+              </td>
+              <td>
+                <div> {{field.email.replaceAll('\"', '')}}</div> 
+              </td>
+              <td>
+                <div> {{field.style.replaceAll('\"', '')}}</div> 
+              </td>
+              <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+              <td>
+                  <button disabled class="status" [ngStyle]="{'background-color': field.isPaid == 'paid' ? 'green' : 'red' }"
+                  (click)="cancel(field, i)"> {{field.isPaid | uppercase}}</button> 
+              </td>
+              <td>
+                 <table class="inTable">
+               <tr class="inTable">
+                 <td class="inTable">
+                    <button class="MarkComplete" (click)="markAsComplete(field, i)">Mark as completed</button>
+                 </td>
+                 <td class="inTable">
+                    <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
+                 </td>
+                
+               </tr>
+             </table>
+              </td>
+            
+         
+           <!-- to be 
+            <td>
+              <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+          </td>
+           --> 
+          </tr>
+        
+      </tbody>
         </table>
         </div>
         </div>
   </mat-tab>
 
   <!--This tab shows all Cancelled data-->
-  <mat-tab label="Cancelled">
+  <mat-tab label="Completed">
     <div class="well">
       <h1>Cancelled Orders</h1>
-      <button class="btn btn-default">Reload Data</button>
+      <button class="btn btn-default"(click)="reloadData()">Reload Data</button>
       <div class = "tableDiv">
       <table class="table table-striped table-bordered">
         <thead>
@@ -122,57 +170,59 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Style</th>
+                <th>Details</th>
+                <th>Actions</th>
             </tr>
         </thead>
-           <!--This is the table with data from the backend
-           <tbody>
-            <tr *ngFor="let field of cancelField; let i = index">
-                <td>
-                  <div>  {{field._id }}  </div>
-                </td>
-                <td>
-                  <div> {{field.orderDate}} </div>
-                </td> 
-                <td>
-                    <div> {{field.fullName.replaceAll('\"', '')}}</div> 
-                </td>
-                <td>
-                  <div> {{field.email.replaceAll('\"', '')}}</div> 
-                </td>
-                <td>
-                  <div> {{field.style.replaceAll('\"', '')}}</div> 
-                </td>
-                <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+        <tbody>
+          <tr *ngFor="let field of fieldArray; let i = index">
               <td>
-               <table class="inTable">
-                 <tr class="inTable">
-                  <td class="inTable">
-                   
+                <div>  {{field._id }}  </div>
+              </td>
+              <td>
+                <div> {{field.orderDate}} </div>
+              </td> 
+              <td>
+                  <div> {{field.fullName.replaceAll('\"', '')}}</div> 
+              </td>
+              <td>
+                <div> {{field.email.replaceAll('\"', '')}}</div> 
+              </td>
+              <td>
+                <div> {{field.style.replaceAll('\"', '')}}</div> 
+              </td>
+              <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+            <td>
+             <table class="inTable">
+               <tr class="inTable">
+                <td class="inTable">
+                 
+               </td>
+                 
+                 <td class="inTable">
+                    <button class="Cancel" (click)="cancel(field, i)">Archive</button>
                  </td>
-                   <td class="inTable">
-                      <button class="Approved">Approve</button>
-                   </td>
-                   <td class="inTable">
-                      <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
-                   </td>
-                 </tr>
-               </table>
-            </td>-->
-             <!-- to be 
-              <td>
-                <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
-            </td>
-
-             </tr>
-          
-        </tbody>
+               </tr>
+             </table>
+          </td>
+           <!-- to be 
+            <td>
+              <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+          </td>
+           --> 
+          </tr>
         
-             --> 
+      </tbody>
+        
+             
            
         </table>
         </div>
         </div>
   </mat-tab>
+
+
+
 
   <!--This tab will be able to upload images-->
   <mat-tab label="Upload Images">
