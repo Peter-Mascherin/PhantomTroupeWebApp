@@ -41,24 +41,24 @@
         </thead>
         <!--This is the table with data from the backend-->
         <tbody>
-            <tr *ngFor="let field of fieldArray; let i = index">
-                <td>
+            <tr  *ngFor="let field of fieldArray; let i = index">
+                <td class="pendingdata">
                   <div>  {{field._id }}  </div>
                 </td>
-                <td>
+                <td class="pendingdata">
                   <div> {{field.orderDate}} </div>
                 </td> 
-                <td>
+                <td class="pendingdata">
                     <div> {{field.fullName.replaceAll('\"', '')}}</div> 
                 </td>
-                <td>
+                <td class="pendingdata">
                   <div> {{field.email.replaceAll('\"', '')}}</div> 
                 </td>
-                <td>
+                <td class="pendingdata">
                   <div> {{field.style.replaceAll('\"', '')}}</div> 
                 </td>
-                <td> <button class="btn btn-default" id="centerButton"(click)="showDetails(field)">Details</button> </td>
-              <td>
+                <td class="pendingdata"> <button class="btn btn-default" id="centerButton" (click)="showDetails(field)">Details</button> </td>
+              <td class="annoyingtd">
                  <tr class="inTable">
                    <td class="inTable">
                       <button  class="ok"(click)="showApprove(field,i)">Approve</button>
@@ -104,24 +104,25 @@
         </thead>
         <tbody>
           <tr *ngFor="let field of fieldArray; let i = index">
-              <td>
+              <td class="pendingdata">
                 <div>  {{field._id }}  </div>
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.orderDate}} </div>
               </td> 
-              <td>
+              <td class="pendingdata">
                   <div> {{field.fullName.replaceAll('\"', '')}}</div> 
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.email.replaceAll('\"', '')}}</div> 
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.style.replaceAll('\"', '')}}</div> 
               </td>
-              <td> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
-              <td>
-                  <button disabled class="status" [ngStyle]="{'background-color': field.isPaid == 'paid' ? 'green' : 'red' }"
+              <td class="pendingdata"> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
+              <td class="pendingdata">
+                <!-- paid is green , not paid is red -->
+                  <button disabled class="status" [ngStyle]="{'background': field.isPaid == 'paid' ? 'rgba(27, 160, 9, 0.8);' : 'rgba(230, 19, 19, 0.8);' }"
                   (click)="cancel(field, i)"> {{field.isPaid | uppercase}}</button> 
               </td>
               <td>
@@ -167,22 +168,22 @@
         </thead>
         <tbody>
           <tr *ngFor="let field of fieldArray; let i = index">
-              <td>
+              <td class="pendingdata">
                 <div>  {{field._id }}  </div>
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.orderDate}} </div>
               </td> 
-              <td>
+              <td class="pendingdata">
                   <div> {{field.fullName.replaceAll('\"', '')}}</div> 
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.email.replaceAll('\"', '')}}</div> 
               </td>
-              <td>
+              <td class="pendingdata">
                 <div> {{field.style.replaceAll('\"', '')}}</div> 
               </td>
-              <td> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
+              <td class="pendingdata"> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
             <td>
              <table class="inTable">
                <tr class="inTable">
@@ -230,14 +231,14 @@
         <form  class="uploadimageform" >
           <mat-form-field class="formfields">
             <mat-label>Image Title</mat-label>
-            <input matInput type="text" />
+            <input id="imagetitle" matInput type="text" [(ngModel)]="formimagetitle" name="formimagetitle"/>
           </mat-form-field>
           
           <br>
           <mat-form-field class="formfields">
             <mat-label>Select Image Category</mat-label>
-            <mat-select >
-              <mat-option  *ngFor="let cat of categoryList; let i = index" value="{{cat}}">{{cat}}</mat-option>  
+            <mat-select id="imagecategory" (selectionChange)="changeCategory($event.value)">
+              <mat-option   *ngFor="let cat of categoryList; let i = index" value="{{cat}}">{{cat}}</mat-option>  
             </mat-select>
           </mat-form-field>
           <br>
@@ -248,7 +249,7 @@
           </div>
           
           <br>
-          <button mat-raised-button type="submit">Upload Image</button>
+          <button mat-raised-button type="submit" (click)="onUpload()" [disabled]="formimagetitle == '' || selectedCategory == '' || selectedFile == undefined">Upload Image</button>
         </form>
       </div>
       </div>

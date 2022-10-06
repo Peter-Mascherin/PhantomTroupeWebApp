@@ -91,6 +91,11 @@ getGalleryInfo()
  return this.http.get("http://127.0.0.1:3000/gall") //local
 }
 
+sendImageToServer(theform: FormData)
+{
+  return this.http.post("http://127.0.0.1:3000/uploadimage",theform);
+}
+
 /**
  * Gets orders based on their status
  */
@@ -144,6 +149,8 @@ completeOrder(cust: CustomerData){
     }
   })
 }
+
+
 
 
 }

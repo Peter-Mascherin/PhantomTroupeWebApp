@@ -5,6 +5,7 @@
 .well {
 	height: 650px;
 	border-radius: 0px 0px 6px 6px;
+	margin-right: 10px;
 	
 }
 
@@ -66,6 +67,7 @@
 .inTable{
 	border-bottom: none !important;
 	width: 72%;
+	vertical-align: middle !important;
 }
 .table tbody tr.active-row {
   font-weight: bold;
@@ -136,13 +138,14 @@
 
 
 .status:hover {
-  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  box-shadow: rgba(32, 32, 32, 0.274) 1pz 1px 1px;
 }
 
 .ok {
 	position:absolute; 
-	top: -13px;
-	background-color: green;
+	top: -2px;
+	
+	background: rgba(27, 160, 9, 0.8);
 	border-radius: 6px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
 	color: #FFFFFF;
@@ -162,7 +165,7 @@
 	-webkit-user-select: none;
 	vertical-align: top;
 	white-space: nowrap;
-	width: 100%;
+	width: 80%;
 	z-index: 9;
 	border: 0;
 	transition: box-shadow .2s;
@@ -170,16 +173,18 @@
   }
   
   .ok:hover {
-	box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+	box-shadow: rgba(22, 10, 5, 0.5) 3px 2px 3px;
   }
 
+  /* God help any soul who goes through this css , i tried modifying and it was a nightmare */
   .bad {
 	position:absolute; 
-	top: -13px;
-	background-color: red;
+	top: -2px;
+	
+	background: rgba(230, 19, 19, 0.8);
 	border-radius: 6px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-	color: #FFFFFF;
+	color: rgb(255, 255, 255);
 	cursor: pointer;
 	display: inline-block;
 	font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -201,9 +206,16 @@
 	border: 0;
 	transition: box-shadow .2s;
   }
+
+  .pendingdata,.approvedata
+  {
+	  
+	  vertical-align: middle !important;
+  }
+
   
   .bad:hover {
-	box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+	box-shadow: rgba(22, 10, 5, 0.5) 3px 2px 3px;
   }
 
 #Approved:hover, .MarkComplete:hover {
