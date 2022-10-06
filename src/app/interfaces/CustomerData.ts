@@ -7,4 +7,5 @@ export interface CustomerData{
     orderStatus: string; //default to pending
     price: Number; //default to 0
     orderDate: string; // date order made
+    isPaid: string
 }

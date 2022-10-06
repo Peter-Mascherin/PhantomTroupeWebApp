@@ -22,7 +22,7 @@
         <div class="imagediv" *ngFor="let c of catGalImg; let i = index" (click)="alertme(c)">
 
             <!-- THIS IS FOR LOCALHOST TESTING-->
-            <img *ngIf="c != null" class="imgclass" src="{{url}}woodstovegall{{c}}.jpg" width="300px" height="300px" loading="lazy"> 
+            <img *ngIf="c != null" class="imgclass" src="{{url}}/images/woodstovegall{{c}}.jpg" width="300px" height="300px" loading="lazy"> 
 
             <!--THIS IS FOR PRODUCTION TO TALK TO SERVER-->
             <!--<img class="imgclass" src="{{url}}/images/woodstovegall{{i}}.jpg" width="300px" height="300px"> -->

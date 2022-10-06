@@ -51,6 +51,7 @@ export class CustomOrderPageComponent implements OnInit {
     this.custData.orderDetails = this.formInfo.get('orderDetails')?.value;
     this.custData.orderStatus = "Pending"
     this.custData.price = 0;
+    this.custData.isPaid = "unpaid"
     this.custData.orderDate = this.dateService.transform(this.currentDate)!
 
     //send to service to server

@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { query } from '@angular/animations';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerData } from '../interfaces/CustomerData';
 import { LoginData } from '../interfaces/LoginData';
+
 import { ResultData } from '../interfaces/resultOutput';
 
 @Injectable({
@@ -20,8 +22,8 @@ export class FormServiceService {
    * wont work unless run -- ng build and put dist folder in server 
    */
   sendToServer(cust: CustomerData){
-    this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
-    // this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
+    //this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
+     this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
     .subscribe(val => {
       console.log(val)
     })
@@ -71,14 +73,6 @@ performLogOutAction(){
    })
 }
 
-/**
- * 
- * @returns pending orders from the backend
- */
-retrievePendingOrders(){
-  //return this.http.get(this.url_location+"/apis/retrieveCustomerData")       // Production
-  return this.http.post("http://127.0.0.1:3000/apis/retrieveCustomerData", {responseType: "json"}) //Local
-}
 
 
 
@@ -94,8 +88,62 @@ getGalleryInfo()
   var params = {
     text: ""
   }
- return this.http.get(this.url_location + "/gall"); //production
- //return this.http.get("http://127.0.0.1:3000/gall") //local
+ //return this.http.get(this.url_location + "/gall"); //production
+ return this.http.get("http://127.0.0.1:3000/gall") //local
+}
+
+/**
+ * Gets orders based on their status
+ */
+retrieveByStatus(orderStatus: string){
+  var val = {"status": orderStatus}
+  //return this.http.post(this.url_location +"/apis/getByStatus" ,val);
+  return this.http.post("http://127.0.0.1:3000/apis/getByStatus" ,val);
+}
+
+/**
+ * Approves order(changes status to approved) and sends it to the "approved tab"
+ */
+
+approveOrder(cust: CustomerData){
+  //this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
+   this.http.post("http://127.0.0.1:3000/apis/approve_order", {cust}, {responseType: 'json'}) //local
+    .subscribe(val => {
+      var result = val as ResultData
+      if (result.status == "fail"){
+        console.log("backend failed")
+      }
+    })
+}
+
+/**
+ * This deletes the order from the collection
+ * @param cust CustomerObject
+ */
+removeOrder(cust: CustomerData){
+  //this.http.post(this.url_location + "/apis/cancel_order", {cust}, {responseType: 'text'}) //production
+  this.http.post("http://127.0.0.1:3000/apis/cancel_order", {cust}, {responseType: 'json'}) //local
+  .subscribe(val => {
+    var result = val as ResultData
+    if (result.status == "fail"){
+      console.log("backend failed")
+    }
+  })
+}
+
+/**
+ * Changes status of order to completed 
+ * @param cust CustomerObject
+ */
+completeOrder(cust: CustomerData){
+  //this.http.post(this.url_location + "/apis/completed_order", {cust}, {responseType: 'text'}) //production
+  this.http.post("http://127.0.0.1:3000/apis/completed_order", {cust}, {responseType: 'json'}) //local
+  .subscribe(val => {
+    var result = val as ResultData
+    if (result.status == "fail"){
+      console.log("backend failed")
+    }
+  })
 }
 
 
