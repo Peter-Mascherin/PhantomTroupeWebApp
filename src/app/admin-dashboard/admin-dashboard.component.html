@@ -57,21 +57,17 @@
                 <td>
                   <div> {{field.style.replaceAll('\"', '')}}</div> 
                 </td>
-                <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+                <td> <button class="btn btn-default" id="centerButton"(click)="showDetails(field)">Details</button> </td>
               <td>
-               <table class="inTable">
                  <tr class="inTable">
-                  <td class="inTable">
-                   
-                 </td>
                    <td class="inTable">
-                      <button class="Approved" (click)="showApprove(field,i)">Approve</button>
+                      <button  class="ok"(click)="showApprove(field,i)">Approve</button>
                    </td>
                    <td class="inTable">
-                      <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
+                      <button class="bad" (click)="cancel(field, i)">Cancel</button>
                    </td>
                  </tr>
-               </table>
+            
             </td>
              <!-- to be 
               <td>
@@ -123,25 +119,20 @@
               <td>
                 <div> {{field.style.replaceAll('\"', '')}}</div> 
               </td>
-              <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+              <td> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
               <td>
                   <button disabled class="status" [ngStyle]="{'background-color': field.isPaid == 'paid' ? 'green' : 'red' }"
                   (click)="cancel(field, i)"> {{field.isPaid | uppercase}}</button> 
               </td>
               <td>
-                 <table class="inTable">
-               <tr class="inTable">
-                 <td class="inTable">
-                    <button class="MarkComplete" (click)="markAsComplete(field, i)">Mark as completed</button>
-                 </td>
-                 <td class="inTable">
-                    <button class="Cancel" (click)="cancel(field, i)">Cancel</button>
-                 </td>
-                
-               </tr>
-             </table>
-              </td>
-            
+              <tr class="inTable">
+                <td class="inTable">
+                   <button  class="ok"(click)="markAsComplete(field, i)">Mark as completed</button>
+                </td>
+                <td class="inTable">
+                   <button class="bad" (click)="cancel(field, i)">Cancel</button>
+                </td>
+              </tr>
          
            <!-- to be 
             <td>
@@ -191,16 +182,14 @@
               <td>
                 <div> {{field.style.replaceAll('\"', '')}}</div> 
               </td>
-              <td> <button class="Details" (click)="showDetails(field)">Details</button> </td>
+              <td> <button class="btn btn-default" (click)="showDetails(field)">Details</button> </td>
             <td>
              <table class="inTable">
                <tr class="inTable">
                 <td class="inTable">
-                 
                </td>
-                 
                  <td class="inTable">
-                    <button class="Cancel" (click)="cancel(field, i)">Archive</button>
+                    <button class="bad" (click)="cancel(field, i)">Archive</button>
                  </td>
                </tr>
              </table>

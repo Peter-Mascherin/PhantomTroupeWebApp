@@ -38,7 +38,6 @@ export class FormServiceService {
  */
 sendLoginServer(loginData: LoginData){
   return this.http.post(this.url_location +"/apis/login", {loginData});
-
 }
 
 /**
