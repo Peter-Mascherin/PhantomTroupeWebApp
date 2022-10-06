@@ -88,8 +88,8 @@ getGalleryInfo()
   var params = {
     text: ""
   }
- return this.http.get(this.url_location + "/gall"); //production
- //return this.http.get("http://127.0.0.1:3000/gall") //local
+ //return this.http.get(this.url_location + "/gall"); //production
+ return this.http.get("http://127.0.0.1:3000/gall") //local
 }
 
 /**
@@ -97,6 +97,7 @@ getGalleryInfo()
  */
 retrieveByStatus(orderStatus: string){
   var val = {"status": orderStatus}
+  //return this.http.post(this.url_location +"/apis/getByStatus" ,val);
   return this.http.post("http://127.0.0.1:3000/apis/getByStatus" ,val);
 }
 
