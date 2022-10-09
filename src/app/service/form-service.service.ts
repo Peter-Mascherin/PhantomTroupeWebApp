@@ -38,7 +38,6 @@ export class FormServiceService {
  */
 sendLoginServer(loginData: LoginData){
   return this.http.post(this.url_location +"/apis/login", {loginData});
-
 }
 
 /**
@@ -90,6 +89,11 @@ getGalleryInfo()
   }
  //return this.http.get(this.url_location + "/gall"); //production
  return this.http.get("http://127.0.0.1:3000/gall") //local
+}
+
+sendImageToServer(theform: FormData)
+{
+  return this.http.post("http://127.0.0.1:3000/uploadimage",theform);
 }
 
 /**
@@ -145,6 +149,8 @@ completeOrder(cust: CustomerData){
     }
   })
 }
+
+
 
 
 }

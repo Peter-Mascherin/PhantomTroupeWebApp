@@ -39,6 +39,17 @@ h1 {
   text-shadow: 2px 2px 2px rgb(122, 122, 122);
 }
 
+.disclaimer
+{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+  padding: 12px;
+  margin-left: 14%;
+  text-shadow: 2px 2px 2px rgb(122, 122, 122);
+  width:75%;
+}
+
 mat-label {
   color: white;
   

@@ -19,6 +19,10 @@ export class AdminDashboardComponent implements OnInit {
   public field: Array<CustomerData> = [];
   public cancelField: Array<CustomerData> = [];
   private paidStatus : any = ""; //whether paid/unpaid
+  public selectedFile: any;
+  public selectedCategory: string = "";
+  public formimagetitle: string = "";
+  
 
   selectedTab : Number = 0; //default tab is 0 -> which represents Pending tab.
   selectedTabTitle : string = "Pending";  //default tab title, changes based on event
@@ -37,6 +41,8 @@ export class AdminDashboardComponent implements OnInit {
   ]
 
   imagesrc: String = "";
+
+  
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data=> {
@@ -80,10 +86,42 @@ export class AdminDashboardComponent implements OnInit {
   showfile(event: any)
   {
     var imagefilelist = event.target.files;
+    this.selectedFile = <File>event.target.files[0];
     var theimage = document.getElementById("previewimage") as HTMLImageElement;
     theimage.src = URL.createObjectURL(imagefilelist[0]);
     
     
+  }
+
+  onUpload()
+  {
+    var formdata = new FormData();
+
+    var imagetitle = this.formimagetitle;
+
+    var imagecategory = this.selectedCategory;
+    
+    formdata.set("imagefile",this.selectedFile);
+    formdata.set("imagetitle",imagetitle);
+    formdata.set("imagecategory",imagecategory);
+   
+    
+    console.log("now printing the values of the form \n");
+    formdata.forEach(g => {
+      console.log(g);
+    });
+
+
+    this.service.sendImageToServer(formdata).subscribe(result => {
+      console.log(result);
+    })
+    
+  }
+
+  changeCategory(value:any)
+  {
+    console.log(value);
+    this.selectedCategory = value;
   }
 
   /**
@@ -158,6 +196,8 @@ showDetails(_field: any){
   Details:       ${ _field.orderDetails}
   Price:         ${priceVal}
   `
+
+  console.log(details);
 
   Swal.fire({
     title: "Order details\n"+details,

@@ -5,8 +5,8 @@
   <div class="CustomOrderHeader">
     <h1>Custom Order Form</h1>
     <h4>
-      Welcome to the custom order form page! In this page you simply fill out all the information so we can set you up with an order and begin the conversation with us
-      to create your item. Once you fill out this form , an email will be sent to us and to you (assuming the email is correct) and we will begin the conversation with you. Once we come
+      Welcome to the custom order form page! On this page you simply fill out all the information so we can set you up with an order and begin the conversation with us
+      to create your item. Once you fill out this form , an email will be sent to us and to you and we will begin the conversation with you. Once we come
       to an agreement on the item and the quoted price, the order will be approved and you will be sent a payment code. You can then enter this code into the Pay page which
       will bring up your order info and the option to pay.
     </h4>
@@ -15,26 +15,28 @@
   </div>
   <br>
   <div class="CustomOrderForm">
-    <h2 class="formtitle">Please enter all necessary information</h2>
+    <h2 class="formtitle">Custom Order Information</h2>
+    <h4 class="disclaimer">All details must be filled out. Name section must have a minimum of 2 characters , Email section must have a valid email, and Order Details must have a minimum of 5 characters</h4>
+    <h4 class="disclaimer">DISCLAIMER: Please acknowledge all payments for orders are made through PayPal! <br>Credit, Debit, or any other form of payment is not accepted</h4>
     <form [formGroup] = "formInfo" id="customerForm" >
-      <mat-form-field>
+      <mat-form-field title="Name must have atleast 2 characters">
         <mat-label>Name</mat-label>
         <input matInput type="text" formControlName = "fullName"/>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field title="Must enter a valid email">
         <mat-label>Email</mat-label>
         <input matInput type="email" formControlName="email" >
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field >
         <mat-label>Select Style</mat-label>
         <mat-select formControlName="style">
           <mat-option  *ngFor="let cat of categoryList; let i = index" value="{{cat}}">{{cat}}</mat-option>  
         </mat-select>
       </mat-form-field>
       <br>
-      <mat-form-field>
+      <mat-form-field title="Order Details must have atleast 5 characters">
         <mat-label>Order Details</mat-label>
         <textarea matInput formControlName="orderDetails"></textarea>
       </mat-form-field>

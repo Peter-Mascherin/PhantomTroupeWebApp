@@ -5,6 +5,7 @@
 .well {
 	height: 650px;
 	border-radius: 0px 0px 6px 6px;
+	margin-right: 10px;
 	
 }
 
@@ -64,56 +65,31 @@
   border-bottom: 2px solid #009879;
 }
 .inTable{
-	border-bottom: 2px solid white;
+	border-bottom: none !important;
+	width: 72%;
+	vertical-align: middle !important;
 }
 .table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
 }
 
-.Cancel {
-	box-shadow:inset 0px 1px 0px 0px #fce2c1;
-	background:linear-gradient(to bottom, #942626 5%, #eb0303 100%);
+#Cancel {
 	background-color:#eb0303;
-	border-radius:10px;
-	height:40px;
-    width: 90px;
-	border:2px solid #eb0303;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #eb0303;
-	
+	color:white;
 }
-.Cancel:hover {
+#Cancel:hover {
 	background:linear-gradient(to bottom, #eb0303 5%, #ffc477 100%);
 	background-color:#d80d0d;
 }
-.Cancel:active {
+#Cancel:active {
 	position:relative;
 	top:1px;
 }
 
-.Approved {
-	box-shadow:inset 0px 1px 0px 0px #fce2c1;
-	background:linear-gradient(to bottom, #1c6122 5%, #06b814 100%);
+#Approved {
 	background-color:#06b814;
-	border-radius:10px;
-	height:40px;
-    width: 90px;
-	border:2px solid #06b814;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #06b814;
-	float: left;
-
+	color:white;
 }
 .MarkComplete {
 	box-shadow:inset 0px 1px 0px 0px #fce2c1;
@@ -134,26 +110,119 @@
 
 }
 .status {
-	box-shadow:inset 0px 1px 0px 0px #fce2c1;
-	border-radius:10px;
-	height:40px;
-    width: 90px;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #06b814;
-	float: left;
-
-
+  background-color: initial;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow .2s;
 }
-.Approved:hover, .MarkComplete:hover {
+
+
+.status:hover {
+  box-shadow: rgba(32, 32, 32, 0.274) 1pz 1px 1px;
+}
+
+.ok {
+	position:absolute; 
+	top: -2px;
+	
+	background: rgba(27, 160, 9, 0.8);
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+	height: 40px;
+	line-height: 40px;
+	outline: 0;
+	overflow: hidden;
+	padding: 0 20px;
+	pointer-events: auto;
+	position: relative;
+	text-align: center;
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: 80%;
+	z-index: 9;
+	border: 0;
+	transition: box-shadow .2s;
+
+  }
+  
+  .ok:hover {
+	box-shadow: rgba(22, 10, 5, 0.5) 3px 2px 3px;
+  }
+
+  /* God help any soul who goes through this css , i tried modifying and it was a nightmare */
+  .bad {
+	position:absolute; 
+	top: -2px;
+	
+	background: rgba(230, 19, 19, 0.8);
+	border-radius: 6px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline-block;
+	font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+	height: 40px;
+	line-height: 40px;
+	outline: 0;
+	overflow: hidden;
+	padding: 0 20px;
+	pointer-events: auto;
+	position: relative;
+	text-align: center;
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: 100%;
+	z-index: 9;
+	border: 0;
+	transition: box-shadow .2s;
+  }
+
+  .pendingdata,.approvedata
+  {
+	  
+	  vertical-align: middle !important;
+  }
+
+  
+  .bad:hover {
+	box-shadow: rgba(22, 10, 5, 0.5) 3px 2px 3px;
+  }
+
+#Approved:hover, .MarkComplete:hover {
 	background:linear-gradient(to bottom, #06b814 5%, #ffc477 100%);
 	background-color:#06b814;
 }
-.Approved:active, .MarkComplete:active {
+#Approved:active, .MarkComplete:active {
 	position:relative;
 	top:1px;
 }
