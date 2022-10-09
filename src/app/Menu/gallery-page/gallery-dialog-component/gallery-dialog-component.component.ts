@@ -12,12 +12,13 @@ export class GalleryDialogComponentComponent implements OnInit {
   constructor(public dialogref: MatDialogRef<GalleryDialogComponentComponent>, @Inject(MAT_DIALOG_DATA) public data: GalleryPics) { }
 
   localProduction: string = window.location.origin +"/images/woodstovegall"//PRODUCTION
-  localhoststring: string = "http://localhost:3000"; //ONLY FOR LOCALHOST SERVER TESTING
-  url: string = "../../../assets/images/galleryimages/woodstovegall"; //ONLY FOR LOCALHOST
+  localhoststring: string = "http://localhost:3000/images/woodstovegall"; //ONLY FOR LOCALHOST SERVER TESTING
+  url: string = "../../../assets/images/galleryimages/woodstovegall"; //ONLY FOR frontend
 
   ngOnInit(): void {
-    this.url = this.url + this.data.imgid + ".jpg";
-    this.localProduction = this.localProduction+ this.data.imgid + ".jpg";
+    //this.url = this.url + this.data.imgid + ".jpg";
+    //this.localProduction = this.localProduction+ this.data.imgid + ".jpg";
+    this.localhoststring = this.localhoststring+ this.data.imgid + ".jpg";
 
   }
 
