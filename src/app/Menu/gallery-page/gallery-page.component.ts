@@ -62,10 +62,7 @@ export class GalleryPageComponent implements OnInit {
   {
       var jsonrecieve: any;
     this.gallservice.getGalleryInfo().subscribe(data => {
-      jsonrecieve = data;
-      var jsonobject = JSON.parse(jsonrecieve["json"])
-      console.log(jsonobject);
-      this.gallerydata = jsonobject;
+     this.gallerydata = data as GalleryPics[];
     })
   }
 

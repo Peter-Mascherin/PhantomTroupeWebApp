@@ -88,7 +88,7 @@ getGalleryInfo()
     text: ""
   }
  //return this.http.get(this.url_location + "/gall"); //production
- return this.http.get("http://127.0.0.1:3000/gall") //local
+ return this.http.post("http://127.0.0.1:3000/gall", {responseType: "json"}) //local
 }
 
 sendImageToServer(theform: FormData)
