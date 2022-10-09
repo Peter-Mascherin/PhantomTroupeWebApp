@@ -34,8 +34,8 @@ export class GalleryPageComponent implements OnInit {
     console.log(this.gallerydata);
     console.log(this.gallerydata[0].imgurl);
     //console.log(JSONGallery);
-    //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
-    this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST , NOT WITH PACKAGE
+    this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
+    //this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST , NOT WITH PACKAGE
     //this.url = "../../../assets/images/galleryimages/"; //ONLY FOR LOCALHOST
     
     

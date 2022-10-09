@@ -22,8 +22,8 @@ export class FormServiceService {
    * wont work unless run -- ng build and put dist folder in server 
    */
   sendToServer(cust: CustomerData){
-    //this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
-     this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
+    this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
+    //this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
     .subscribe(val => {
       console.log(val)
     })
@@ -88,8 +88,8 @@ getGalleryInfo()
   var params = {
     text: ""
   }
- //return this.http.get(this.url_location + "/gall"); //production
- return this.http.get("http://127.0.0.1:3000/gall") //local
+ return this.http.get(this.url_location + "/gall"); //production
+ //return this.http.get("http://127.0.0.1:3000/gall") //local
 }
 
 /**
@@ -97,8 +97,8 @@ getGalleryInfo()
  */
 retrieveByStatus(orderStatus: string){
   var val = {"status": orderStatus}
-  //return this.http.post(this.url_location +"/apis/getByStatus" ,val);
-  return this.http.post("http://127.0.0.1:3000/apis/getByStatus" ,val);
+  return this.http.post(this.url_location +"/apis/getByStatus" ,val);
+  //return this.http.post("http://127.0.0.1:3000/apis/getByStatus" ,val);
 }
 
 /**
@@ -106,8 +106,8 @@ retrieveByStatus(orderStatus: string){
  */
 
 approveOrder(cust: CustomerData){
-  //this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
-   this.http.post("http://127.0.0.1:3000/apis/approve_order", {cust}, {responseType: 'json'}) //local
+  this.http.post(this.url_location + "/apis/approve_order", {cust}, {responseType: 'json'}) //production
+  // this.http.post("http://127.0.0.1:3000/apis/approve_order", {cust}, {responseType: 'json'}) //local
     .subscribe(val => {
       var result = val as ResultData
       if (result.status == "fail"){
@@ -121,8 +121,8 @@ approveOrder(cust: CustomerData){
  * @param cust CustomerObject
  */
 removeOrder(cust: CustomerData){
-  //this.http.post(this.url_location + "/apis/cancel_order", {cust}, {responseType: 'text'}) //production
-  this.http.post("http://127.0.0.1:3000/apis/cancel_order", {cust}, {responseType: 'json'}) //local
+  this.http.post(this.url_location + "/apis/cancel_order", {cust}, {responseType: 'json'}) //production
+  //this.http.post("http://127.0.0.1:3000/apis/cancel_order", {cust}, {responseType: 'json'}) //local
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){
@@ -136,8 +136,8 @@ removeOrder(cust: CustomerData){
  * @param cust CustomerObject
  */
 completeOrder(cust: CustomerData){
-  //this.http.post(this.url_location + "/apis/completed_order", {cust}, {responseType: 'text'}) //production
-  this.http.post("http://127.0.0.1:3000/apis/completed_order", {cust}, {responseType: 'json'}) //local
+  this.http.post(this.url_location + "/apis/completed_order", {cust}, {responseType: 'json'}) //production
+  //this.http.post("http://127.0.0.1:3000/apis/completed_order", {cust}, {responseType: 'json'}) //local
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){
