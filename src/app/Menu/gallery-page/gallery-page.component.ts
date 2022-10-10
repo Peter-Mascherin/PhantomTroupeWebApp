@@ -32,6 +32,7 @@ export class GalleryPageComponent implements OnInit {
   ngOnInit(): void {
     this.setGalleryJSON();
     console.log(this.gallerydata);
+    console.log(this.gallerydata[221]);
     console.log(this.gallerydata[0].imgurl);
     //console.log(JSONGallery);
     //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
@@ -48,8 +49,10 @@ export class GalleryPageComponent implements OnInit {
 
   alertme(id: number)
   {
+    console.log(id)
 
     var galitem = this.gallerydata[id];
+    console.log(galitem)
 
     const dialogref = this.dialog.open(GalleryDialogComponentComponent,{
       width:'400px',
@@ -63,6 +66,7 @@ export class GalleryPageComponent implements OnInit {
       var jsonrecieve: any;
     this.gallservice.getGalleryInfo().subscribe(data => {
      this.gallerydata = data as GalleryPics[];
+     console.log(this.gallerydata)
     })
   }
 
@@ -143,6 +147,7 @@ export class GalleryPageComponent implements OnInit {
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
+     
     }
     //console.log(this.catGalImg)
     console.log(count)
