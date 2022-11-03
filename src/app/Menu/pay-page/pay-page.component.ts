@@ -19,7 +19,6 @@ export class PayPageComponent implements OnInit {
     this.payForm = new FormGroup({
          orderID: new FormControl()
     });
-   
   }
 
   submit(){
@@ -31,7 +30,7 @@ export class PayPageComponent implements OnInit {
     this.service.getOrderById(this.orderID)
     .subscribe((val:any) => {
       console.log('The val is: ' + val)
-      this.payForm = val as [];
+      this.payForm = val;
     }
     );
   }
