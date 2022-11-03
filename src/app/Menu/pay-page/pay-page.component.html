@@ -9,10 +9,13 @@
 </div>
 
     <div class="orderdiv">
-        <form>
+        
+
+        <form id="pay-form" [formGroup]="payForm" (ngSubmit)="submit()">
             <mat-form-field>
-                <mat-label>Input Order Id</mat-label>
-                <input matInput type="text">
+              <mat-placeholder>Order Number</mat-placeholder>
+              <input type="text" matInput formControlName="orderID">
+              <mat-icon (click)="submit()" matSuffix>search</mat-icon>
             </mat-form-field>
         </form>
 

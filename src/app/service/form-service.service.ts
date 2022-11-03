@@ -106,6 +106,15 @@ retrieveByStatus(orderStatus: string){
 }
 
 /**
+ * Get the order by ID 
+ */
+getOrderById(orderID: number){
+  var val = {"id": orderID}
+  //return this.http.post(this.url_location +"/apis/getOrderById", val);
+  return this.http.post("http://127.0.0.1:3000/apis/getByOrderId", val);
+}
+
+/**
  * Approves order(changes status to approved) and sends it to the "approved tab"
  */
 
