@@ -14,7 +14,7 @@
         <form id="pay-form" [formGroup]="payForm" (ngSubmit)="submit()">
             <mat-form-field>
               <mat-placeholder>Order Number</mat-placeholder>
-              <input type="text" matInput formControlName="orderID">
+              <input type="number" matInput formControlName="orderID">
               <mat-icon (click)="submit()" matSuffix>search</mat-icon>
             </mat-form-field>
         </form>

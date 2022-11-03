@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { FormServiceService } from 'src/app/service/form-service.service';
 
 @Component({
   selector: 'app-pay-page',
@@ -9,11 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PayPageComponent implements OnInit {
    payForm: FormGroup | any;
-   service: any;
-   orderID: any;
+   orderID: FormControl | any;
  
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: FormServiceService) { }
 
   ngOnInit(): void {
     this.payForm = new FormGroup({
@@ -28,11 +28,10 @@ export class PayPageComponent implements OnInit {
   }
 
   getOrderById(){
-    console.log(this.orderID)
     this.service.getOrderById(this.orderID)
     .subscribe((val:any) => {
-      console.log(val)
-      this.payForm = val;
+      console.log('The val is: ' + val)
+      this.payForm = val as [];
     }
     );
   }
