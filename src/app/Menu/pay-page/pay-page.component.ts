@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CustomerData } from 'src/app/interfaces/CustomerData';
+import { FormServiceService } from 'src/app/service/form-service.service';
 
 @Component({
   selector: 'app-pay-page',
@@ -8,12 +10,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./pay-page.component.css']
 })
 export class PayPageComponent implements OnInit {
-   payForm: FormGroup | any;
-   service: any;
-   orderID: any;
+   payForm = new FormGroup({})
+
+   orderVal: string = '';
+   public  custData: Array<CustomerData> = [];
  
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private service: FormServiceService) { }
 
   ngOnInit(): void {
     this.payForm = new FormGroup({
@@ -28,11 +31,12 @@ export class PayPageComponent implements OnInit {
   }
 
   getOrderById(){
-    console.log(this.orderID)
-    this.service.getOrderById(this.orderID)
-    .subscribe((val:any) => {
+    this.orderVal = this.payForm.get('orderID')?.value;
+    console.log(this.orderVal)
+    this.service.getOrderById(this.orderVal)
+    .subscribe(val => {
       console.log(val)
-      this.payForm = val;
+      this.custData = val as [];
     }
     );
   }
