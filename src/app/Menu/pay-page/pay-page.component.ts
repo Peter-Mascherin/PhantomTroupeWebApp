@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerData } from 'src/app/interfaces/CustomerData';
@@ -22,7 +22,6 @@ export class PayPageComponent implements OnInit {
     this.payForm = new FormGroup({
          orderID: new FormControl()
     });
-   
   }
 
   submit(){
