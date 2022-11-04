@@ -106,9 +106,9 @@ retrieveByStatus(orderStatus: string){
 }
 
 /**
- * Get the order by ID 
+ * Gets the order info by order ID 
  */
-getOrderById(orderID: string){
+getByOrderId(orderID: string){
 var val = {"_id": orderID}
   console.log(orderID)
   //return this.http.post(this.url_location +"/apis/getOrderById", val);
@@ -158,9 +158,5 @@ completeOrder(cust: CustomerData){
       console.log("backend failed")
     }
   })
-}
-
-
-
-
+} 
 }

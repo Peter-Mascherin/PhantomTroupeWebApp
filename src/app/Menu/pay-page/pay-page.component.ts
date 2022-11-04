@@ -31,15 +31,11 @@ export class PayPageComponent implements OnInit {
 
   getOrderById(){
     this.orderVal = this.payForm.get('orderID')?.value;
-    console.log(this.orderVal)
-    this.service.getOrderById(this.orderVal)
+    this.service.getByOrderId(this.orderVal)
     .subscribe(val => {
       console.log(val)
       this.custData = val as [];
     }
     );
   }
-
-
-
 }

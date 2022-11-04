@@ -10,12 +10,15 @@
 
     <div class="orderdiv">
         
-
+        
         <form id="pay-form" [formGroup]="payForm" (ngSubmit)="submit()">
+            <mat-label>Enter Your Order Number:</mat-label>
+            &nbsp;&nbsp;&nbsp;
             <mat-form-field>
-              <mat-placeholder>Order Number</mat-placeholder>
+              <mat-label>Order Number</mat-label>
               <input type="text" matInput formControlName="orderID">
-              <mat-icon (click)="submit()" matSuffix>search</mat-icon>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="btnSubmit" type="submit"(click)="submit()" mat-raised-button>Search</button>
             </mat-form-field>
         </form>
 

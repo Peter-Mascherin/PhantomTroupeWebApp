@@ -1,4 +1,4 @@
-.paypageinfo , .orderdiv{
+.paypageinfo , .orderdiv, .pay-info{
     background-color: rgba(24, 23, 23, 0.95);
     backdrop-filter: blur(3px);
     padding: 24px;
@@ -9,14 +9,36 @@
     text-align: center;
     border-radius: 12px;
   }
+  .btnSubmit{
+    position: absolute;
+    top: 38%;
+    left: 115%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .btnSubmit:hover {
+    background:linear-gradient(to bottom, #37fb25 5%, #77ff89 100%);
+    background-color:#25fb53;
+  }
+  .btnSubmit:active {
+    display: inline-block;
+    top:10px;
+  }
 
   h1{
     font-size: 50px;
     line-height: 1.5;
   }
 
-.mat-form-field input {
+  .mat-form-field{
     height: 20px;
+    width:400px !important;
+}
+
+.mat-form-field input {
+    height: 40px;
+    width:400px !important;
     transition: height ease-in-out 400ms;
 }
 
@@ -30,4 +52,16 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+
+.pay-info {
+  background-color: rgba(24, 23, 23,0.95);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 24px; 
+  margin: auto;
+  margin-bottom: 5%;
+  text-align: center;
+  width: 60%;
+
 }
