@@ -11,16 +11,33 @@
     <div class="orderdiv">
         
         
-        <form id="pay-form" [formGroup]="payForm" (ngSubmit)="submit()">
+        <form id="pay-form" [formGroup]="payForm" >
             <mat-label>Enter Your Order Number:</mat-label>
             &nbsp;&nbsp;&nbsp;
             <mat-form-field>
               <mat-label>Order Number</mat-label>
               <input type="text" matInput formControlName="orderID">
               &nbsp;&nbsp;&nbsp;&nbsp;
-              <button class="btnSubmit" type="submit"(click)="submit()" mat-raised-button>Search</button>
+              <button class="btnSubmit" type="submit"(click)="getOrderById()" mat-raised-button>Search</button>
             </mat-form-field>
+            
         </form>
+        
+        
 
     </div>
+
+    <ng-template [ngIf]="orderdata.orderStatus == 'Approved'">
+    <div class="orderinfodiv">
+        <h2>Order Information</h2>
+        <p>Name - {{orderdata.fullName}}</p>
+        <p>Email - {{orderdata.email}}</p>
+        <p>Item Style - {{orderdata.style}}</p>
+        <p>Order Status - {{orderdata.orderStatus}}</p>
+        <p>Price - ${{orderdata.price}}</p>
+        <p>Date Ordered - {{orderdata.orderDate}}</p>
+        <p>Order Details - {{orderdata.orderDetails}}</p>
+        
+    </div>
+    </ng-template>
 </div>  
