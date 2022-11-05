@@ -13,6 +13,8 @@ export class PayPageComponent implements OnInit {
    payForm = new FormGroup({})
 
    orderVal: string = '';
+   orderdata = {} as CustomerData;
+   
    public  custData: Array<CustomerData> = [];
  
 
@@ -35,6 +37,11 @@ export class PayPageComponent implements OnInit {
     .subscribe(val => {
       console.log(val)
       this.custData = val as [];
+      this.orderdata = this.custData[0];
+      if(this.orderdata.orderStatus != "Approved")
+      {
+        alert("Order is not approved. Order must be approved before payment")
+      }
     }
     );
   }
