@@ -8,6 +8,8 @@ import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component'; 
 import { RouteResolver } from './Resolver/RouteResolver';
+import { SuccessPageComponent } from './Menu/pay-page/success/success-page/success-page.component';
+import { FailPageComponent } from './Menu/pay-page/failure/fail-page/fail-page.component';
 
 // Defined the router paths
 const routes: Routes = [
@@ -41,6 +43,20 @@ const routes: Routes = [
   {
     path: 'admin-dashboard',
     component: AdminDashboardComponent,
+    resolve: {
+      data: RouteResolver
+    }
+  },
+  {
+    path: 'success-page',
+    component: SuccessPageComponent,
+    resolve: {
+      data: RouteResolver
+    }
+  },
+  {
+    path: 'fail-page',
+    component: FailPageComponent,
     resolve: {
       data: RouteResolver
     }

@@ -1,66 +1,84 @@
-.paypageinfo , .orderdiv, .pay-info{
-    background-color: rgba(24, 23, 23, 0.95);
-    backdrop-filter: blur(3px);
-    padding: 24px;
-    margin: 12px;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-shadow: 2px 2px 2px rgb(122, 122, 122);
-    text-align: center;
-    border-radius: 12px;
-  }
-  .btnSubmit{
-    position: absolute;
-    top: 38%;
-    left: 115%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
+.grid-container{
+  display: grid;
+  grid-template-columns: 800px;
+  grid-auto-rows: minmax(150px,auto);
+  grid-template-areas: 
+  "header header"
+  "form info"
+  "form info"
+}
 
-  .btnSubmit:hover {
-    background:linear-gradient(to bottom, #37fb25 5%, #77ff89 100%);
-    background-color:#25fb53;
-  }
-  .btnSubmit:active {
-    display: inline-block;
-    top:10px;
-  }
+.paypageinfo{
+  grid-area: header;
+}
 
-  h1{
-    font-size: 50px;
-    line-height: 1.5;
-  }
+.orderdiv{
+  grid-area: form;
+}
 
-  .mat-form-field{
-    height: 20px;
-    width:400px !important;
+.orderinfodiv{
+  grid-area: info;
+}
+
+.paypageinfo , .orderdiv, .pay-info, .orderinfodiv{
+  background-color: rgba(24, 23, 23, 0.95);
+  backdrop-filter: blur(3px);
+  padding: 24px;
+  margin: 12px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 2px rgb(122, 122, 122);
+  text-align: center;
+  border-radius: 12px;
+}
+.btnSubmit{
+  margin: 0;
+  position: absolute;
+  top: 85%;
+  left: 35%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1.5;
+}
+
+.mat-form-field{
+  height: 20px;
+  width:400px !important;
 }
 
 .mat-form-field input {
-    height: 40px;
-    width:400px !important;
-    transition: height ease-in-out 400ms;
+  height: 40px;
+  width:400px !important;
+  transition: height ease-in-out 400ms;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
 }
 
 .mat-form-field input:focus {
-    background-color: rgb(51, 49, 49) !important;
-    height: 50px;
-    transition: height ease-in-out 400ms;
+  background-color: rgb(51, 49, 49) !important;
+  height: 50px;
+  transition: height ease-in-out 400ms;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  margin: 0; 
+margin: 0; 
 }
 
 .pay-info {
-  background-color: rgba(24, 23, 23,0.95);
-  backdrop-filter: blur(4px);
-  border-radius: 12px;
-  padding: 24px; 
-  margin: auto;
-  margin-bottom: 5%;
-  text-align: center;
-  width: 60%;
+background-color: rgba(24, 23, 23,0.95);
+backdrop-filter: blur(4px);
+border-radius: 12px;
+padding: 24px; 
+margin: auto;
+margin-bottom: 5%;
+text-align: center;
+width: 60%;
 
 }
