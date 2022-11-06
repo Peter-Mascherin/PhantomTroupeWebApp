@@ -1,6 +1,7 @@
 import { query } from '@angular/animations';
+import { DOCUMENT } from '@angular/common';
 import { HttpClient,HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerData } from '../interfaces/CustomerData';
 import { LoginData } from '../interfaces/LoginData';
@@ -12,7 +13,7 @@ import { ResultData } from '../interfaces/resultOutput';
 })
 export class FormServiceService {
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router, @Inject(DOCUMENT) private document: Document) { }
   url_location = window.location.origin;
   resultData = {} as ResultData;
  
@@ -158,5 +159,43 @@ completeOrder(cust: CustomerData){
       console.log("backend failed")
     }
   })
-} 
+}
+
+ payForOrder(){//cust: CustomerData){
+  var cust = {
+    
+    "_id":"633e4a0c70db3a104e134cc9",
+    "fullName":"Jurgen Klopp",
+    "email":"Mohdbd99@gmail.com",
+    "style":"Wallet",
+    "orderDetails":"Need it for my games",
+    "orderStatus":"Approved",
+    "price":13,
+    "orderDate":"Oct 5, 2022",
+    "isPaid":"unpaid"
+}
+  this.http.post("http://127.0.0.1:3000/apis/payOrder", cust) //local
+  .subscribe(val=> {
+    this.executePayment(val)
+   
+  })
+
+}
+
+executePayment(val: any){
+  this.document.location.href = val;
+}
+
+getPaymentFeddback(data: any){
+ return this.http.post("http://127.0.0.1:3000/apis/payFeedback", data,{responseType: "json"})
+  
+  
+  //local
+
+}
+
+
+
+
+
 }

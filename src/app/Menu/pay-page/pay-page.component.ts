@@ -28,21 +28,28 @@ export class PayPageComponent implements OnInit {
 
   submit(){
     //console.log(this.payForm.value);
-    this.getOrderById()
+   
+   // this.getOrderById()
   }
 
-  getOrderById(){
-    this.orderVal = this.payForm.get('orderID')?.value;
-    this.service.getByOrderId(this.orderVal)
-    .subscribe(val => {
-      console.log(val)
-      this.custData = val as [];
-      this.orderdata = this.custData[0];
-      if(this.orderdata.orderStatus != "Approved")
-      {
-        alert("Order is not approved. Order must be approved before payment")
-      }
-    }
-    );
+  test(){
+    console.log("ll")
+   this.service.payForOrder();
+
   }
+
+  // getOrderById(){
+  //   this.orderVal = this.payForm.get('orderID')?.value;
+  //   this.service.getByOrderId(this.orderVal)
+  //   .subscribe(val => {
+  //     console.log(val)
+  //     this.custData = val as [];
+  //     this.orderdata = this.custData[0];
+  //     if(this.orderdata.orderStatus != "Approved")
+  //     {
+  //       alert("Order is not approved. Order must be approved before payment")
+  //     }
+  //   }
+  //   );
+  // }
 }

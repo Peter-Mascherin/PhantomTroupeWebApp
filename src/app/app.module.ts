@@ -28,7 +28,8 @@ import { AdminPageComponent } from './Admin/admin-page/admin-page.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DatePipe } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table';
+import { PaymentFeedbackPageComponent } from './payment-feedback-page/payment-feedback-page.component'
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {MatTableModule} from '@angular/material/table'
     PayPageComponent,
     GalleryDialogComponentComponent,
     AdminPageComponent,
-    AdminDashboardComponent 
+    AdminDashboardComponent,
+    PaymentFeedbackPageComponent 
   ],
   imports: [
     BrowserModule,

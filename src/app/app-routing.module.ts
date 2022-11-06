@@ -8,6 +8,7 @@ import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component'; 
 import { RouteResolver } from './Resolver/RouteResolver';
+import { PaymentFeedbackPageComponent } from './payment-feedback-page/payment-feedback-page.component';
 
 // Defined the router paths
 const routes: Routes = [
@@ -49,6 +50,11 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'payfeedback',
+    component: PaymentFeedbackPageComponent,
+
   }
 ];
 
