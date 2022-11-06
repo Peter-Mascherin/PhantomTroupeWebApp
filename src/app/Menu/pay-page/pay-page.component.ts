@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerData } from 'src/app/interfaces/CustomerData';
 import { FormServiceService } from 'src/app/service/form-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pay-page',
@@ -32,24 +33,26 @@ export class PayPageComponent implements OnInit {
    // this.getOrderById()
   }
 
-  test(){
-    console.log("ll")
-   this.service.payForOrder();
-
+  getOrderById(){
+    this.orderVal = this.payForm.get('orderID')?.value;
+    this.service.getByOrderId(this.orderVal)
+    .subscribe(val => {
+      console.log(val)
+      this.custData = val as [];
+      this.orderdata = this.custData[0];
+      if(this.orderdata.orderStatus != "Approved")
+      {
+        this.wrongOrderNum();
+      }
+    }
+    );
   }
 
-  // getOrderById(){
-  //   this.orderVal = this.payForm.get('orderID')?.value;
-  //   this.service.getByOrderId(this.orderVal)
-  //   .subscribe(val => {
-  //     console.log(val)
-  //     this.custData = val as [];
-  //     this.orderdata = this.custData[0];
-  //     if(this.orderdata.orderStatus != "Approved")
-  //     {
-  //       alert("Order is not approved. Order must be approved before payment")
-  //     }
-  //   }
-  //   );
-  // }
+  wrongOrderNum(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Wrong Order Number',
+      text: 'Invalid Order Number or The Order Number has not been approved yet.',
+    })
+  }
 }

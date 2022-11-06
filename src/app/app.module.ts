@@ -29,6 +29,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { DatePipe } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import { SuccessPageComponent } from './Menu/pay-page/success/success-page/success-page.component';
+import { FailPageComponent } from './Menu/pay-page/failure/fail-page/fail-page.component';
 import { PaymentFeedbackPageComponent } from './payment-feedback-page/payment-feedback-page.component'
 
 
@@ -42,6 +44,8 @@ import { PaymentFeedbackPageComponent } from './payment-feedback-page/payment-fe
     GalleryDialogComponentComponent,
     AdminPageComponent,
     AdminDashboardComponent,
+    SuccessPageComponent,
+    FailPageComponent,
     PaymentFeedbackPageComponent 
   ],
   imports: [

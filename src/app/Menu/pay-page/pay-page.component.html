@@ -1,5 +1,4 @@
-
-<div>
+<div class="grid-container">
 <div class="paypageinfo">
     <h1 class = "paypagetitle">Payment Page</h1>
     <h4>This page is created for you to pay for your order! After talking with us and your order being approved you will 
@@ -10,22 +9,16 @@
 </div>
 
     <div class="orderdiv">
-        
-        
         <form id="pay-form" [formGroup]="payForm" >
             <mat-label>Enter Your Order Number:</mat-label>
-            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;<br><br>
             <mat-form-field>
-              <mat-label>Order Number</mat-label>
+              <mat-label>Order Number (Press Enter to Search)</mat-label>
               <input type="text" matInput formControlName="orderID">
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              <button class="btnSubmit" type="submit"(click)="test()" mat-raised-button>Search</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+              <button class="btnSubmit" type="submit"(click)="getOrderById()" mat-raised-button>Search</button>
             </mat-form-field>
-
         </form>
-        
-        
-
     </div>
 
     <ng-template [ngIf]="orderdata.orderStatus == 'Approved'">
@@ -38,7 +31,7 @@
         <p>Price - ${{orderdata.price}}</p>
         <p>Date Ordered - {{orderdata.orderDate}}</p>
         <p>Order Details - {{orderdata.orderDetails}}</p>
-        
+        <button mat-raised-button>Pay</button>
     </div>
     </ng-template>
 </div>  
