@@ -1,1 +1,26 @@
-<p>payment-feedback-page works!</p>
+
+
+
+
+
+<div *ngIf="displayPage == true; else elseBlock">
+    <div class="Success">
+        <div>
+            REDIRECTING . . . . 
+        </div>
+        <br><br />
+    </div>
+
+</div>
+
+
+<ng-template #elseBlock>
+<div class="Success">
+    <div>
+       UNAUTHORIZED PAGE
+    </div>
+    <br><br />
+    <button (click)="BackToHome()">Back To Home</button>
+    </div>
+
+</ng-template>

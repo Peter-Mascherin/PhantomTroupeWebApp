@@ -51,16 +51,12 @@ const routes: Routes = [
   {
     path: 'success-page',
     component: SuccessPageComponent,
-    resolve: {
-      data: RouteResolver
-    }
+   
   },
   {
     path: 'fail-page',
     component: FailPageComponent,
-    resolve: {
-      data: RouteResolver
-    }
+   
   },
   {
     path: '',

@@ -10,23 +10,45 @@ import { FormServiceService } from '../service/form-service.service';
 export class PaymentFeedbackPageComponent implements OnInit {
 
   constructor(private service: FormServiceService,private route: ActivatedRoute, private direct: Router) { }
-  
+  displayPage = false;
   ngOnInit(): void {
-    this.route.queryParams
+    this.service.getRedirect()
     .subscribe(
-      params => {
-        if (params.length != 0){
-          this.service.getPaymentFeddback(params)
-           .subscribe(
-            val => {
-              //redirect to success page: change the '/' to success page link
-              // include button says return to home page on the success page
-              this.direct.navigate(['/'])
-            }
-           )}
-        })
+      val => {
+        console.log(val)
+        if (val == true){
+          this.displayPage = true;
+          //then execute payment feedback
+          this.route.queryParams
+              .subscribe(
+                params => {
+                    this.service.getPaymentFeddback(params)
+                    .subscribe(
+                      val => {
+                        this.direct.navigate(['/success-page'])
+                      }
+                    )
+                    
+                  
+                  })
+        }
+
+        else{
+          this.displayPage = false;
+          console.log("unauthorized")
+        }
+
       }
-        
+    )
+  
+   
+     
+    }
+    
+    
+    BackToHome(){
+      this.direct.navigate(['/']);
+    }
         
     
     //  this.service.getPaymentFeddback()

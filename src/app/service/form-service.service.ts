@@ -5,7 +5,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerData } from '../interfaces/CustomerData';
 import { LoginData } from '../interfaces/LoginData';
-
+//import * as myGlobals from '../globals'
 import { ResultData } from '../interfaces/resultOutput';
 
 @Injectable({
@@ -13,10 +13,13 @@ import { ResultData } from '../interfaces/resultOutput';
 })
 export class FormServiceService {
 
-  constructor(private http: HttpClient,private router: Router, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private http: HttpClient,private router: Router, @Inject(DOCUMENT) private document: Document) { 
+    console.log("changing data again")
+  }
   url_location = window.location.origin;
   resultData = {} as ResultData;
- 
+
+
   /**
    * 
    * @param cust: pass the customer details to the server
@@ -161,22 +164,14 @@ completeOrder(cust: CustomerData){
   })
 }
 
- payForOrder(){//cust: CustomerData){
-  var cust = {
-    
-    "_id":"633e4a0c70db3a104e134cc9",
-    "fullName":"Jurgen Klopp",
-    "email":"Mohdbd99@gmail.com",
-    "style":"Wallet",
-    "orderDetails":"Need it for my games",
-    "orderStatus":"Approved",
-    "price":13,
-    "orderDate":"Oct 5, 2022",
-    "isPaid":"unpaid"
-}
+ payForOrder(cust: CustomerData){//cust: CustomerData){
+
   this.http.post("http://127.0.0.1:3000/apis/payOrder", cust) //local
   .subscribe(val=> {
-    this.executePayment(val)
+   this.changeRedirect(true).subscribe(x => {
+       this.executePayment(val)
+
+   })
    
   })
 
@@ -187,11 +182,19 @@ executePayment(val: any){
 }
 
 getPaymentFeddback(data: any){
- return this.http.post("http://127.0.0.1:3000/apis/payFeedback", data,{responseType: "json"})
-  
-  
-  //local
+  return this.http.post("http://127.0.0.1:3000/apis/payFeedback", data,{responseType: "json"})
 
+
+}
+
+changeRedirect(val: boolean){
+  var change = {"set": val}
+  return this.http.post("http://127.0.0.1:3000/apis/redirect", change ,{responseType: "json"})
+
+}
+
+getRedirect(){
+  return this.http.post("http://127.0.0.1:3000/getRedirect",{responseType: "json"})
 }
 
 

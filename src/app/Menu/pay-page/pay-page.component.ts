@@ -27,10 +27,16 @@ export class PayPageComponent implements OnInit {
     });
   }
 
-  submit(){
-    //console.log(this.payForm.value);
-   
-   // this.getOrderById()
+  /**
+   * This will go to service class and run paypal from backend
+   */
+  payOrder(){
+    
+   this.service.payForOrder(this.custData[0])
+  }
+
+  payForOrder(){
+    this.payOrder()
   }
 
   getOrderById(){
@@ -44,7 +50,17 @@ export class PayPageComponent implements OnInit {
       {
         this.wrongOrderNum();
       }
+
+      else{
+       
+        
+        if (this.orderdata.isPaid == "paid"){
+            this.orderPaid();
+          
+        }
+
     }
+  }
     );
   }
 
@@ -52,7 +68,15 @@ export class PayPageComponent implements OnInit {
     Swal.fire({
       icon: 'error',
       title: 'Wrong Order Number',
-      text: 'Invalid Order Number or The Order Number has not been approved yet.',
+      text: 'Order Number has not been approved yet or is completed.',
+    })
+  }
+
+  orderPaid(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Warning!',
+      text: 'Order has been paid for already!',
     })
   }
 }
