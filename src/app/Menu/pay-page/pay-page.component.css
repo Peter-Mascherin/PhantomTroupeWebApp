@@ -18,6 +18,7 @@
 
 .orderinfodiv{
   grid-area: info;
+  overflow-y: scroll;
 }
 
 .paypageinfo , .orderdiv, .pay-info, .orderinfodiv{
@@ -80,5 +81,6 @@ margin: auto;
 margin-bottom: 5%;
 text-align: center;
 width: 60%;
+
 
 }
