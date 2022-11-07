@@ -22,15 +22,15 @@
     </div>
 
     <ng-template [ngIf]="orderdata.orderStatus == 'Approved'">
-    <div class="orderinfodiv">
+    <div class="orderinfodiv" style="overflow:scroll; height:400px;">
         <h2>Order Information</h2>
-        <p>Name - {{orderdata.fullName}}</p>
-        <p>Email - {{orderdata.email}}</p>
-        <p>Item Style - {{orderdata.style}}</p>
-        <p>Order Status - {{orderdata.orderStatus}}</p>
-        <p>Price - ${{orderdata.price}}</p>
-        <p>Date Ordered - {{orderdata.orderDate}}</p>
-        <p>Order Details - {{orderdata.orderDetails}}</p>
+        <p><b>Name</b> &nbsp;-&nbsp; {{orderdata.fullName}}</p>
+        <p><b>Email</b> &nbsp;-&nbsp; {{orderdata.email}}</p>
+        <p><b>Item Style</b> &nbsp;-&nbsp; {{orderdata.style}}</p>
+        <p><b>Order Status</b> &nbsp;-&nbsp; {{orderdata.orderStatus}}</p>
+        <p><b>Price </b>&nbsp;-&nbsp; ${{orderdata.price}}</p>
+        <p><b>Date Ordered </b>&nbsp;-&nbsp; {{orderdata.orderDate}}</p>
+        <p><b>Order Details </b>&nbsp;-&nbsp; {{orderdata.orderDetails}}</p>
         <button mat-raised-button>Pay</button>
     </div>
     </ng-template>
