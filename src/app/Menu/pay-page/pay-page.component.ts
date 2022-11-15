@@ -31,7 +31,6 @@ export class PayPageComponent implements OnInit {
    * This will go to service class and run paypal from backend
    */
   payOrder(){
-    
    this.service.payForOrder(this.custData[0])
   }
 
