@@ -31,7 +31,7 @@
         <p><b>Price </b>&nbsp;-&nbsp; ${{orderdata.price}}</p>
         <p><b>Date Ordered </b>&nbsp;-&nbsp; {{orderdata.orderDate}}</p>
         <p><b>Order Details </b>&nbsp;-&nbsp; {{orderdata.orderDetails}}</p>
-        <button mat-raised-button>Pay</button>
+        <button mat-raised-button (click)="payForOrder()" >Pay</button>
     </div>
     </ng-template>
 </div>  

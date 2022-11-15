@@ -1,7 +1,25 @@
-<div class="Success">
-<div>
-    Your Payment Was Successful
+
+
+
+<div *ngIf="displayPage == true; else elseBlock">
+        <div class="Success">
+        <div>
+            Your Payment Was Successful
+        </div>
+        <br><br />
+        <button (click)="BackToHome()">Back To Home</button>
+        </div>
+    
 </div>
-<br><br />
-<button (click)="BackToHome()">Back To Home</button>
-</div>
+
+
+<ng-template #elseBlock>
+    <div class="Success">
+        <div>
+           UNAUTHORIZED PAGE
+        </div>
+        <br><br />
+        <button (click)="BackToHome()">Back To Home</button>
+        </div>
+
+</ng-template>

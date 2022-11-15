@@ -8,6 +8,7 @@ import { GalleryPageComponent } from './Menu/gallery-page/gallery-page.component
 import { PayPageComponent } from './Menu/pay-page/pay-page.component';
 import {AdminDashboardComponent} from './admin-dashboard/admin-dashboard.component'; 
 import { RouteResolver } from './Resolver/RouteResolver';
+import { PaymentFeedbackPageComponent } from './payment-feedback-page/payment-feedback-page.component';
 import { SuccessPageComponent } from './Menu/pay-page/success/success-page/success-page.component';
 import { FailPageComponent } from './Menu/pay-page/failure/fail-page/fail-page.component';
 
@@ -50,21 +51,22 @@ const routes: Routes = [
   {
     path: 'success-page',
     component: SuccessPageComponent,
-    resolve: {
-      data: RouteResolver
-    }
+   
   },
   {
     path: 'fail-page',
     component: FailPageComponent,
-    resolve: {
-      data: RouteResolver
-    }
+   
   },
   {
     path: '',
     component: HomeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'payfeedback',
+    component: PaymentFeedbackPageComponent,
+
   }
 ];
 
