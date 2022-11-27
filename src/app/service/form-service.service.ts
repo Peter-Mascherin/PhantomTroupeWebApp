@@ -135,12 +135,26 @@ approveOrder(cust: CustomerData){
 }
 
 /**
- * This deletes the order from the collection
+ * This deletes the order from the collection and sends email as confirmation
  * @param cust CustomerObject
  */
 removeOrder(cust: CustomerData){
   this.http.post(this.url_location + "/apis/cancel_order", {cust}, {responseType: 'json'}) //production
   //this.http.post("http://127.0.0.1:3000/apis/cancel_order", {cust}, {responseType: 'json'}) //local
+  .subscribe(val => {
+    var result = val as ResultData
+    if (result.status == "fail"){
+      console.log("backend failed")
+    }
+  })
+}
+
+/**
+ * This will delete the order from the database
+ */
+archiveOrder(cust: CustomerData){
+  this.http.post(this.url_location + "/apis/archive_order", {cust}, {responseType: 'json'}) //production
+  //this.http.post("http://127.0.0.1:3000/apis/archive_order", {cust}, {responseType: 'json'}) //local
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){

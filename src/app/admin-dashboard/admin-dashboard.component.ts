@@ -161,6 +161,8 @@ export class AdminDashboardComponent implements OnInit {
      }else if(operation == "complete"){
       this.service.completeOrder(cust)
 
+     }else if (operation == "archive"){
+      this.service.archiveOrder(cust)
      }
      
 }
@@ -284,6 +286,33 @@ cancel(cust: CustomerData, index: number){
       )
 
       this.performOperation(cust, index, "cancel")
+    }
+  })
+}
+
+/**
+ * This will delete the order from the database
+ * @param cust Customer details
+ * @param index value of row
+ */
+archiveOrder(cust: CustomerData, index: number){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'The order has been deleted.',
+        'success'
+      )
+
+      this.performOperation(cust, index, "archive")
     }
   })
 }
