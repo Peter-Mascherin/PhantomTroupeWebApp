@@ -14,7 +14,7 @@ import { ResultData } from '../interfaces/resultOutput';
 export class FormServiceService {
 
   constructor(private http: HttpClient,private router: Router, @Inject(DOCUMENT) private document: Document) { 
-    console.log("changing data again")
+    //("changing data again")
   }
   url_location = window.location.origin;
   resultData = {} as ResultData;
@@ -29,7 +29,7 @@ export class FormServiceService {
     this.http.post(this.url_location + "/apis/send", {cust}, {responseType: 'text'}) //production
     //this.http.post("http://127.0.0.1:3000/apis/send", {cust}, {responseType: 'text'}) //local
     .subscribe(val => {
-      console.log(val)
+      //(val)
     })
   }
 
@@ -53,7 +53,7 @@ isUserAuthenticated(){
  //return this.http.post("http://127.0.0.1:3000/isAuth",{responseType: "json"}).  //local
   return this.http.post(this.url_location+ "/isAuth", {responseType: "json"}). //production
   subscribe(val => {
-    console.log(val)
+    //(val)
     this.resultData = val as ResultData;
     if (this.resultData.status == "notLogged"){
       this.router.navigate(['/admin'])
@@ -71,7 +71,7 @@ performLogOutAction(){
    //return this.http.post("http://127.0.0.1:3000/apis/logout",{responseType: "json"}).  //local
    return this.http.post(this.url_location+ "/apis/logout", {responseType: "json"}). //production
    subscribe(val => {
-    console.log(val)
+    //(val)
      this.router.navigate(['/admin'])
    })
 }
@@ -97,7 +97,8 @@ getGalleryInfo()
 
 sendImageToServer(theform: FormData)
 {
-  return this.http.post("http://127.0.0.1:3000/uploadimage",theform);
+  //return this.http.post("http://127.0.0.1:3000/uploadimage",theform);
+  return this.http.post(this.url_location+"/uploadimage",theform);
 }
 
 /**
@@ -114,7 +115,7 @@ retrieveByStatus(orderStatus: string){
  */
 getByOrderId(orderID: string){
 var val = {"_id": orderID}
-  console.log(orderID)
+  //(orderID)
   return this.http.post(this.url_location +"/apis/getByOrderId", val);
  // return this.http.post("http://127.0.0.1:3000/apis/getByOrderId", val);
 }
@@ -129,7 +130,7 @@ approveOrder(cust: CustomerData){
     .subscribe(val => {
       var result = val as ResultData
       if (result.status == "fail"){
-        console.log("backend failed")
+        //("backend failed")
       }
     })
 }
@@ -144,7 +145,7 @@ removeOrder(cust: CustomerData){
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){
-      console.log("backend failed")
+      //("backend failed")
     }
   })
 }
@@ -158,7 +159,7 @@ archiveOrder(cust: CustomerData){
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){
-      console.log("backend failed")
+      //("backend failed")
     }
   })
 }
@@ -173,7 +174,7 @@ completeOrder(cust: CustomerData){
   .subscribe(val => {
     var result = val as ResultData
     if (result.status == "fail"){
-      console.log("backend failed")
+      //("backend failed")
     }
   })
 }

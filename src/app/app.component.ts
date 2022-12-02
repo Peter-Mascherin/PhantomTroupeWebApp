@@ -13,11 +13,11 @@ export class AppComponent {
   constructor(private router: Router) {}
   testfunc()
   {
-    console.log("Yea the gallery button works");
+    //("Yea the gallery button works");
   }
 
   goToAdmin(){
-    console.log('Admin was clicked')
+    //('Admin was clicked')
     this.router.navigate(['/admin']);
    
   }

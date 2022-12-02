@@ -15,7 +15,7 @@ export class PaymentFeedbackPageComponent implements OnInit {
     this.service.getRedirect()
     .subscribe(
       val => {
-        console.log(val)
+        //(val)
         if (val == true){
           this.displayPage = true;
           //then execute payment feedback
@@ -35,7 +35,7 @@ export class PaymentFeedbackPageComponent implements OnInit {
 
         else{
           this.displayPage = false;
-          console.log("unauthorized")
+          //("unauthorized")
         }
 
       }
@@ -53,7 +53,7 @@ export class PaymentFeedbackPageComponent implements OnInit {
     
     //  this.service.getPaymentFeddback()
     //  .subscribe(val => {
-    //     console.log(val)
+    //     //(val)
     //  })
      ;
   }
