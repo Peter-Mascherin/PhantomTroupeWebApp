@@ -17,6 +17,7 @@ export class GalleryPageComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private gallservice: FormServiceService) { }
   url: string = "";
+  bucketUrl: string = "";
   picurl: string ="";
   testtext: string = "";
   localhoststring: string = "http://localhost:3000";
@@ -44,6 +45,7 @@ export class GalleryPageComponent implements OnInit {
     //src="{{url}}/images/woodstovegall{{i}}.jpg"
 
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
+    this.bucketUrl = "https://woodstoveleathergoodsbulkimages.s3.us-east-2.amazonaws.com"
     this.showKeychains() //decided keychains will be the default to show on load
   }
 
