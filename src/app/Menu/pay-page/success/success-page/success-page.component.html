@@ -3,9 +3,12 @@
 
 <div *ngIf="displayPage == true; else elseBlock">
         <div class="Success">
-        <div>
-            Your Payment Was Successful
-        </div>
+        <h2>Payment was Successful</h2>
+        </br>
+        <h5>Your payment has successfully gone through and your order will now begin the process of being made.<br>
+            We will keep in contact with you, showing you updates to your product along the design process.<br>
+            Thank you for shopping with Woodstove Leather Goods!
+        </h5>
         <br><br />
         <button (click)="BackToHome()">Back To Home</button>
         </div>
@@ -15,9 +18,9 @@
 
 <ng-template #elseBlock>
     <div class="Success">
-        <div>
-           UNAUTHORIZED PAGE
-        </div>
+        <h2>Unauthorized Access</h2>
+        <br/>
+        <h5>This page is not meant to be accessed. Please return to the home page</h5>
         <br><br />
         <button (click)="BackToHome()">Back To Home</button>
         </div>
