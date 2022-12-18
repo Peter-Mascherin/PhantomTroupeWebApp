@@ -23,15 +23,15 @@ export class SuccessPageComponent implements OnInit {
     .subscribe(val => {
       if (val == false){
         this.displayPage = false;
-        console.log("not allowed")
+        //("not allowed")
       }
       else{
         this.displayPage = true;
-        console.log("allowed")
+        //("allowed")
         //reset the redirect
         this.service.changeRedirect(false)
         .subscribe(val => {
-          console.log("reset: "+val)
+          //("reset: "+val)
           
         })
       }

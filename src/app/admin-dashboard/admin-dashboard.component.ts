@@ -46,7 +46,7 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data=> {
-      console.log("User logged in") //delete after production
+      //("User logged in") //delete after production
     })
     this.retrieveOrdersByStatus();
   }
@@ -57,7 +57,7 @@ export class AdminDashboardComponent implements OnInit {
    * @param tabChangeEvent Triggered on every every the mat tab is changed
    */
   tabChanged(tabChangeEvent: MatTabChangeEvent): void {
-    //console.log(tabChangeEvent.index);
+    ////(tabChangeEvent.index);
     this.selectedTab = tabChangeEvent.index;
     if (this.selectedTab == 0){
       this.selectedTabTitle = "Pending";
@@ -106,21 +106,21 @@ export class AdminDashboardComponent implements OnInit {
     formdata.set("imagecategory",imagecategory);
    
     
-    console.log("now printing the values of the form \n");
+    //("now printing the values of the form \n");
     formdata.forEach(g => {
-      console.log(g);
+      //(g);
     });
 
 
     this.service.sendImageToServer(formdata).subscribe(result => {
-      console.log(result);
+      //(result);
     })
     
   }
 
   changeCategory(value:any)
   {
-    console.log(value);
+    //(value);
     this.selectedCategory = value;
   }
 
@@ -128,7 +128,7 @@ export class AdminDashboardComponent implements OnInit {
    * Respinsible ofr calling service to log user out
    */
   userLogOut(){
-    console.log("user logging out")
+    //("user logging out")
     this.service.performLogOutAction()
   }
 
@@ -161,6 +161,8 @@ export class AdminDashboardComponent implements OnInit {
      }else if(operation == "complete"){
       this.service.completeOrder(cust)
 
+     }else if (operation == "archive"){
+      this.service.archiveOrder(cust)
      }
      
 }
@@ -169,10 +171,10 @@ export class AdminDashboardComponent implements OnInit {
  * Calls service class to retrieve pending orders from backend
  */
 retrieveOrdersByStatus(){
-  console.log(this.selectedTabTitle)
+  //(this.selectedTabTitle)
   this.service.retrieveByStatus(this.selectedTabTitle)
   .subscribe(val => {
-    console.log(val)
+    //(val)
     this.fieldArray = val as [];
   }
   );
@@ -197,7 +199,7 @@ showDetails(_field: any){
   Price:         ${priceVal}
   `
 
-  console.log(details);
+  //(details);
 
   Swal.fire({
     title: "Order details\n"+details,
@@ -252,8 +254,8 @@ async showApprove(cust: CustomerData, index: number){
 
 // for now only removes the order
 moveToCancelTab(_field: any, index: number){
-  console.log(_field.fullName)
-  console.log(index)
+  //(_field.fullName)
+  //(index)
 
   const orderNum = _field.orderNumber
   const orderDate = _field.orderDate
@@ -284,6 +286,33 @@ cancel(cust: CustomerData, index: number){
       )
 
       this.performOperation(cust, index, "cancel")
+    }
+  })
+}
+
+/**
+ * This will delete the order from the database
+ * @param cust Customer details
+ * @param index value of row
+ */
+archiveOrder(cust: CustomerData, index: number){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'The order has been deleted.',
+        'success'
+      )
+
+      this.performOperation(cust, index, "archive")
     }
   })
 }

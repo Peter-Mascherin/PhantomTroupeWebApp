@@ -20,7 +20,7 @@ export class AdminPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(data=> {
-      console.log("User not logged") //delete after production
+      //("User not logged") //delete after production
     })
   }
 

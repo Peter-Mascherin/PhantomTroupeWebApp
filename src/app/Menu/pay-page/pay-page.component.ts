@@ -31,7 +31,6 @@ export class PayPageComponent implements OnInit {
    * This will go to service class and run paypal from backend
    */
   payOrder(){
-    
    this.service.payForOrder(this.custData[0])
   }
 
@@ -43,7 +42,7 @@ export class PayPageComponent implements OnInit {
     this.orderVal = this.payForm.get('orderID')?.value;
     this.service.getByOrderId(this.orderVal)
     .subscribe(val => {
-      console.log(val)
+      //(val)
       this.custData = val as [];
       this.orderdata = this.custData[0];
       if(this.orderdata.orderStatus != "Approved")

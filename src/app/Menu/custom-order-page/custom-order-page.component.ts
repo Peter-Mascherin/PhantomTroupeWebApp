@@ -58,7 +58,7 @@ export class CustomOrderPageComponent implements OnInit {
     this.formInfo.reset();
     this.formService.sendToServer(this.custData);
 
-    console.log(this.custData)
+    //(this.custData)
   }
 
 

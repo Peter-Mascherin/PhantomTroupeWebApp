@@ -13,7 +13,7 @@ export class RouteResolver implements Resolve<any> {
 
   }
   resolve() {
-    console.log('route reoslved') //remove during prod
+    //('route reoslved') //remove during prod
     return this.FormService.isUserAuthenticated();
   }
 

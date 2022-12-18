@@ -16,15 +16,15 @@ export class FailPageComponent implements OnInit {
     .subscribe(val => {
       if (val == false){
         this.displayPage = false;
-        console.log("not allowed")
+        //("not allowed")
       }
       else{
-        console.log("allowed")
+        //("allowed")
         this.displayPage = true
         //reset the redirect
         this.service.changeRedirect(false)
         .subscribe(val => {
-          console.log("reset: "+val)
+          //("reset: "+val)
           
         })
       }

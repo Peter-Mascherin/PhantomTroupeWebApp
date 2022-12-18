@@ -17,6 +17,7 @@ export class GalleryPageComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private gallservice: FormServiceService) { }
   url: string = "";
+  bucketUrl: string = "";
   picurl: string ="";
   testtext: string = "";
   localhoststring: string = "http://localhost:3000";
@@ -31,28 +32,29 @@ export class GalleryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.setGalleryJSON();
-    console.log(this.gallerydata);
-    console.log(this.gallerydata[221]);
-    console.log(this.gallerydata[0].imgurl);
-    //console.log(JSONGallery);
-    //this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
-    this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST server
+    //(this.gallerydata);
+    //(this.gallerydata[221]);
+    //(this.gallerydata[0].imgurl);
+    ////(JSONGallery);
+    this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
+    //this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST server
     //this.url = "../../../assets/images/galleryimages/"; //ONLY FOR frontend
     
     
-    console.log('url='+this.url)
+    //('url='+this.url)
     //src="{{url}}/images/woodstovegall{{i}}.jpg"
 
     this.picurl = "/images/galleryimages/woodstovegall2.jpg"
+    this.bucketUrl = "https://woodstoveleathergoodsbulkimages.s3.us-east-2.amazonaws.com"
     this.showKeychains() //decided keychains will be the default to show on load
   }
 
   alertme(id: number)
   {
-    console.log(id)
+    //(id)
 
     var galitem = this.gallerydata[id];
-    console.log(galitem)
+    //(galitem)
 
     const dialogref = this.dialog.open(GalleryDialogComponentComponent,{
       width:'400px',
@@ -66,7 +68,7 @@ export class GalleryPageComponent implements OnInit {
       var jsonrecieve: any;
     this.gallservice.getGalleryInfo().subscribe(data => {
      this.gallerydata = data as GalleryPics[];
-     console.log(this.gallerydata)
+     //(this.gallerydata)
     })
   }
 
@@ -77,124 +79,124 @@ export class GalleryPageComponent implements OnInit {
 
   //functions to show different gallery images
   showKeychains(){
-    console.log("keychains")
+    //("keychains")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Keychains'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showSuspenders(){
-    console.log("suspenders")
+    //("suspenders")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Suspenders'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
     
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showJournals(){
-    console.log('testing journals')
+    //('testing journals')
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Journal'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showBags(){
-    console.log("test bags")
+    //("test bags")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Bag'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showStraps(){
-    console.log("test straps")
+    //("test straps")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Strap'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
      
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showCollars(){
-    console.log("test collars")
+    //("test collars")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Collars'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showBelts(){
-    console.log("test belts")
+    //("test belts")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Belt'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   }
 
   showWallets(){
-    console.log("test wallets")
+    //("test wallets")
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Wallet'){
-        //console.log(this.gallerydata[i])
+        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    //console.log(this.catGalImg)
-    console.log(count)
+    ////(this.catGalImg)
+    //(count)
   } 
 }
