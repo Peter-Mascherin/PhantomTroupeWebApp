@@ -15,6 +15,8 @@ export class PayPageComponent implements OnInit {
 
    orderVal: string = '';
    orderdata = {} as CustomerData;
+   orderIsNull: Boolean = false;
+   
    
    public  custData: Array<CustomerData> = [];
  
@@ -44,21 +46,38 @@ export class PayPageComponent implements OnInit {
     .subscribe(val => {
       //(val)
       this.custData = val as [];
+      
       this.orderdata = this.custData[0];
+
+      if(this.orderdata == null)
+      {
+        this.orderIsNull = true;
+        this.orderDoesntExist()
+      }
+      else
+      {
+        this.orderIsNull = false;
+        if(this.orderdata.orderStatus != "Approved")
+        {
+          this.wrongOrderNum();
+        }
+      else{
+        if (this.orderdata.isPaid == "paid"){
+            this.orderPaid();
+          }
+        }
+      }
+      /*
       if(this.orderdata.orderStatus != "Approved")
       {
         this.wrongOrderNum();
       }
-
       else{
-       
-        
         if (this.orderdata.isPaid == "paid"){
             this.orderPaid();
-          
+          }
         }
-
-    }
+        */
   }
     );
   }
@@ -68,6 +87,14 @@ export class PayPageComponent implements OnInit {
       icon: 'error',
       title: 'Wrong Order Number',
       text: 'Order Number has not been approved yet or is completed.',
+    })
+  }
+
+  orderDoesntExist(){
+    Swal.fire({
+      icon: 'error',
+      title: 'Order Not Found',
+      text: 'Order not found. Either order does not exist or order id is incorrect',
     })
   }
 

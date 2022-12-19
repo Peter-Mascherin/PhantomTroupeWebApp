@@ -4,11 +4,11 @@
 <div *ngIf="displayPage == true; else elseBlock">
     <div class="Success">
         <h2>Payment was Unsuccessful</h2>
-    </br>
-    <h5>Your payment has not successfully gone through. Please try again later or contact us </br>
+    <br>
+    <h5>Your payment has not successfully gone through. Please try again later or contact us <br>
         If problems keep persisting, please contact Paypal to resolve any account issues
     </h5>
-    <br><br />
+    <br><br>
     <button (click)="BackToHome()">Back To Home</button>
     </div>
 
@@ -18,9 +18,9 @@
 <ng-template #elseBlock>
 <div class="Success">
     <h2>Unauthorized Access</h2>
-        <br/>
+        <br>
         <h5>This page is not meant to be accessed. Please return to the home page</h5>
-    <br><br />
+    <br><br>
     <button (click)="BackToHome()">Back To Home</button>
     </div>
 

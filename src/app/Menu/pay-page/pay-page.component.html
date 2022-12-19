@@ -21,7 +21,8 @@
         </form>
     </div>
 
-    <ng-template [ngIf]="orderdata.orderStatus == 'Approved'">
+    <ng-template [ngIf]="orderIsNull != true">
+        <ng-template [ngIf]="orderdata.orderStatus == 'Approved'">
     <div class="orderinfodiv" style="overflow:scroll; height:400px; overflow-x: hidden;">
         <h2>Order Information</h2>
         <p><b>Name</b> &nbsp;-&nbsp; {{orderdata.fullName}}</p>
@@ -33,5 +34,6 @@
         <p><b>Order Details </b>&nbsp;-&nbsp; {{orderdata.orderDetails}}</p>
         <button mat-raised-button (click)="payForOrder()" >Pay</button>
     </div>
+    </ng-template>
     </ng-template>
 </div>  
