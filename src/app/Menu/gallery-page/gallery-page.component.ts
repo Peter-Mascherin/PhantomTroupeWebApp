@@ -1,9 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { GalleryPics } from './GalleryInterface';
 import {MatDialog} from '@angular/material/dialog';
-//import JSONGallery from '../gallery-page/galleryjson/JSONgalleryinfo.json'; //old one
-import JSONGallery from '../gallery-page/galleryjson/jsonsuperbatch.json'; //server json
-//import JSONGallery from '../gallery-page/galleryjson/localjsonsuperbatch.json'; //local json (for popup images)
 import { GalleryDialogComponentComponent } from './gallery-dialog-component/gallery-dialog-component.component';
 import { FormServiceService } from 'src/app/service/form-service.service';
 
@@ -24,7 +21,7 @@ export class GalleryPageComponent implements OnInit {
 
   templimit = 100;
 
-  gallerydata: GalleryPics[] = JSONGallery;
+  gallerydata: GalleryPics[] = [];
   
   personaldata: any;
   
@@ -32,21 +29,7 @@ export class GalleryPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.setGalleryJSON();
-    //(this.gallerydata);
-    //(this.gallerydata[221]);
-    //(this.gallerydata[0].imgurl);
-    ////(JSONGallery);
-    this.url = window.location.origin; //will grab the url FOR PRODUCTION TALKING TO SERVER
-    //this.url = this.localhoststring; //FOR SERVER RUNNING ON LOCALHOST server
-    //this.url = "../../../assets/images/galleryimages/"; //ONLY FOR frontend
-    
-    
-    //('url='+this.url)
-    //src="{{url}}/images/woodstovegall{{i}}.jpg"
-
-    this.picurl = "/images/galleryimages/woodstovegall2.jpg"
     this.bucketUrl = "https://woodstoveleathergoodsbulkimages.s3.us-east-2.amazonaws.com"
-    this.showKeychains() //decided keychains will be the default to show on load
   }
 
   alertme(id: number)
@@ -65,11 +48,11 @@ export class GalleryPageComponent implements OnInit {
 
   setGalleryJSON()
   {
-      var jsonrecieve: any;
-    this.gallservice.getGalleryInfo().subscribe(data => {
-     this.gallerydata = data as GalleryPics[];
-     //(this.gallerydata)
+     this.gallservice.getGalleryInfo().subscribe(data => {
+     this.gallerydata = data as [];
+     this.showKeychains() //display keychains as default on page load
     })
+
   }
 
   //this function is for testing
@@ -77,55 +60,70 @@ export class GalleryPageComponent implements OnInit {
     return Array(n);
   }
 
+  resetClick(newElement: number){
+     let newHtml = <HTMLElement>document.querySelector('#cat'+newElement)
+     newHtml.style.color = 'rgb(248, 232, 88)'
+
+    for (let i =0; i< 8; i++){
+      if (i != newElement){
+        let oldHtml = <HTMLElement>document.querySelector(('#cat'+i))
+      //
+      oldHtml.style.textDecoration = 'none'
+      oldHtml.style.color = 'white'
+      }
+      
+    }
+    
+  }
+
   //functions to show different gallery images
   showKeychains(){
-    //("keychains")
+    this.resetClick(0)
+    
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Keychains'){
         ////(this.gallerydata[i])
+        console.log(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    ////(this.catGalImg)
-    //(count)
+
   }
+
+
 
   showSuspenders(){
     //("suspenders")
+    this.resetClick(1)
+
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Suspenders'){
-        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    
-    ////(this.catGalImg)
-    //(count)
   }
 
+
   showJournals(){
-    //('testing journals')
+    this.resetClick(2)
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
       if (this.gallerydata[i].category == 'Journal'){
-        ////(this.gallerydata[i])
         this.catGalImg[i] = this.gallerydata[i].imgid
         count++
       }
     }
-    ////(this.catGalImg)
-    //(count)
   }
 
   showBags(){
-    //("test bags")
+    this.resetClick(3)
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
@@ -135,12 +133,11 @@ export class GalleryPageComponent implements OnInit {
         count++
       }
     }
-    ////(this.catGalImg)
-    //(count)
+
   }
 
   showStraps(){
-    //("test straps")
+    this.resetClick(4)
     var count = 0
     this.catGalImg = []
     for (let i = 0; i < this.gallerydata.length; i++) {
@@ -151,11 +148,10 @@ export class GalleryPageComponent implements OnInit {
       }
      
     }
-    ////(this.catGalImg)
-    //(count)
   }
 
   showCollars(){
+    this.resetClick(5)
     //("test collars")
     var count = 0
     this.catGalImg = []
@@ -171,6 +167,7 @@ export class GalleryPageComponent implements OnInit {
   }
 
   showBelts(){
+    this.resetClick(6)
     //("test belts")
     var count = 0
     this.catGalImg = []
@@ -186,6 +183,7 @@ export class GalleryPageComponent implements OnInit {
   }
 
   showWallets(){
+    this.resetClick(7)
     //("test wallets")
     var count = 0
     this.catGalImg = []
@@ -200,3 +198,7 @@ export class GalleryPageComponent implements OnInit {
     //(count)
   } 
 }
+function rgb(arg0: number, arg1: number, arg2: number): string {
+  throw new Error('Function not implemented.');
+}
+
