@@ -106,14 +106,8 @@ export class AdminDashboardComponent implements OnInit {
     formdata.set("imagecategory",imagecategory);
    
     
-    //("now printing the values of the form \n");
-    formdata.forEach(g => {
-      //(g);
-    });
-
-
     this.service.sendImageToServer(formdata).subscribe(result => {
-      //(result);
+      Swal.fire('Image successfully uploaded')
     })
     
   }

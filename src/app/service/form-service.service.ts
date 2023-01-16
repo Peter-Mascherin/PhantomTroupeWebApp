@@ -91,7 +91,7 @@ getGalleryInfo()
   var params = {
     text: ""
   }
- return this.http.get(this.url_location + "/gall"); //production
+ return this.http.post(this.url_location + "/gall", {responseType: 'json'}); //production
  //return this.http.post("http://127.0.0.1:3000/gall", {responseType: "json"}) //local
 }
 
@@ -116,8 +116,8 @@ retrieveByStatus(orderStatus: string){
 getByOrderId(orderID: string){
 var val = {"_id": orderID}
   //(orderID)
-  //return this.http.post(this.url_location +"/apis/getByOrderId", val);
-  return this.http.post("http://127.0.0.1:3000/apis/getByOrderId", val);
+  return this.http.post(this.url_location +"/apis/getByOrderId", val);
+ // return this.http.post("http://127.0.0.1:3000/apis/getByOrderId", val);
 }
 
 /**
